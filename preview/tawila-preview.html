@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tawila Capital | Fonds d'investissement éthique et sans dette</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%0A%20%20%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2214%22%20fill%3D%22%230f4a35%22%2F%3E%0A%20%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23c4a24e%22%20stroke-width%3D%225%22%20stroke-linejoin%3D%22miter%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M44%2018v12H26v18H18%22%2F%3E%3Cpath%20d%3D%22M56%2018v12h18v18h8%22%2F%3E%3Cpath%20d%3D%22M44%2082V70H26V52H18%22%2F%3E%3Cpath%20d%3D%22M56%2082V70h18V52h8%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
+  <style>
+/* =========================================================
+   TAWILA — Feuille de style principale
+   Palette, typographie et composants.
+   Tout est piloté par les variables ci-dessous : modifiez
+   une couleur ou une police ici et le site entier suit.
+   ========================================================= */
+
+:root {
+  /* Couleurs */
+  --encre: #0b2e22;       /* vert profond : fond sombre, textes forts */
+  --abysse: #0f4a35;      /* vert Tawila (logo) : bandes sombres */
+  --pierre: #d9dad3;      /* traits, bordures */
+  --brume: #f4f5f1;       /* fond clair principal */
+  --blanc: #ffffff;
+  --laiton: #c4a24e;      /* or Tawila (logo) : accent, avec parcimonie */
+  --laiton-fonce: #9a7c33;
+  --texte: #1f2f28;
+  --texte-doux: #5a6a62;
+  --texte-inverse: #e8ece8;
+
+  /* Typographie */
+  --font-display: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "Manrope", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Échelle typographique (fluide) */
+  --t-xs: 0.8125rem;
+  --t-sm: 0.9375rem;
+  --t-md: 1.0625rem;
+  --t-lg: clamp(1.25rem, 1.05rem + 0.6vw, 1.5rem);
+  --t-xl: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+  --t-2xl: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+  --t-3xl: clamp(2.75rem, 1.6rem + 5.2vw, 6rem);
+
+  /* Espacements */
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 2rem;
+  --s-5: 3rem;
+  --s-6: 4.5rem;
+  --s-7: clamp(4.5rem, 6vw + 2rem, 8.5rem);
+
+  --container: 1180px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --header-h: 88px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 900ms;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--t-md);
+  line-height: 1.65;
+  color: var(--texte);
+  background: var(--brume);
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+p { margin: 0 0 var(--s-2); }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--s-3);
+  color: var(--encre);
+}
+h1 { font-size: var(--t-3xl); }
+h2 { font-size: var(--t-2xl); }
+h3 { font-size: var(--t-xl); line-height: 1.15; }
+h4 { font-size: var(--t-lg); font-family: var(--font-body); font-weight: 600; }
+.lead { font-size: var(--t-lg); line-height: 1.5; color: var(--texte); max-width: 40ch; }
+.muted { color: var(--texte-doux); }
+.serif { font-family: var(--font-display); }
+.italic { font-style: italic; }
+
+:focus-visible { outline: 2px solid var(--laiton); outline-offset: 3px; border-radius: 2px; }
+.skip-link {
+  position: absolute; left: var(--s-2); top: -100px;
+  background: var(--encre); color: #fff; padding: 0.6rem 1rem; z-index: 1000;
+}
+.skip-link:focus { top: var(--s-2); }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.container { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+.section { padding-block: var(--s-7); }
+.section--tight { padding-block: var(--s-6); }
+.section--dark { background: var(--encre); color: var(--texte-inverse); }
+.section--dark h1, .section--dark h2, .section--dark h3 { color: #fff; }
+.section--dark .muted { color: #a9b3b8; }
+.section--abysse { background: var(--abysse); color: var(--texte-inverse); }
+.section--abysse h2, .section--abysse h3 { color: #fff; }
+.section--white { background: var(--blanc); }
+
+.grid { display: grid; gap: var(--s-4); }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+.grid--side { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--s-6); align-items: start; }
+@media (max-width: 900px) {
+  .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--side { grid-template-columns: 1fr; gap: var(--s-4); }
+}
+@media (max-width: 600px) {
+  .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
+}
+
+/* En-tête de section : titre + intro sur deux colonnes */
+.section-head { margin-bottom: var(--s-5); }
+.section-head h2 { max-width: 20ch; }
+.section-head .lead { max-width: 52ch; }
+.section-head--split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--s-4); align-items: end; }
+@media (max-width: 900px) { .section-head--split { grid-template-columns: 1fr; } }
+
+/* ---------- Ligne d'horizon (motif signature) ---------- */
+.horizon { width: 100%; height: 1px; background: var(--pierre); position: relative; overflow: visible; }
+.horizon::after {
+  content: ""; position: absolute; inset: 0;
+  background: var(--laiton);
+  transform: scaleX(0); transform-origin: left center;
+  transition: transform 1400ms var(--ease-out);
+}
+.is-visible .horizon::after, .horizon.is-visible::after { transform: scaleX(1); }
+.section--dark .horizon, .section--abysse .horizon { background: rgba(255,255,255,0.14); }
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.95rem 1.6rem;
+  font-weight: 600; font-size: var(--t-sm); letter-spacing: 0.01em;
+  border: 1px solid var(--encre); color: var(--encre); background: transparent;
+  border-radius: 2px; cursor: pointer;
+  transition: background 300ms, color 300ms, border-color 300ms, transform 300ms var(--ease-out);
+}
+.btn:hover { background: var(--encre); color: #fff; }
+.btn--solid { background: var(--encre); color: #fff; }
+.btn--solid:hover { background: var(--abysse); border-color: var(--abysse); }
+.btn--light { border-color: rgba(255,255,255,0.7); color: #fff; }
+.btn--light:hover { background: #fff; color: var(--encre); border-color: #fff; }
+.btn--light.btn--solid { background: #fff; color: var(--encre); }
+.btn--light.btn--solid:hover { background: var(--brume); }
+.btn svg { width: 16px; height: 16px; transition: transform 300ms var(--ease-out); }
+.btn:hover svg { transform: translateX(3px); }
+
+.link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-weight: 600; font-size: var(--t-sm); color: var(--encre);
+  border-bottom: 1px solid var(--laiton); padding-bottom: 2px;
+  transition: border-color 300ms, color 300ms;
+}
+.link:hover { color: var(--laiton-fonce); border-color: transparent; }
+.link svg { width: 14px; height: 14px; flex: none; transition: transform 300ms var(--ease-out); }
+.link:hover svg { transform: translateX(3px); }
+.section--dark .link, .section--abysse .link { color: #fff; }
+
+/* ---------- En-tête ---------- */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 100;
+  height: var(--header-h);
+  display: flex; align-items: center;
+  transition: background 400ms, box-shadow 400ms, height 400ms;
+}
+.site-header.is-scrolled {
+  height: 70px;
+  background: rgba(244, 245, 241, 0.88);
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  box-shadow: 0 1px 0 rgba(14, 27, 37, 0.08);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); }
+.brand { display: inline-flex; align-items: center; gap: 0.7rem; }
+.brand__mark { width: 38px; height: 38px; flex: none; }
+.brand__name {
+  font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.01em; color: var(--abysse);
+  transform: translateY(1px); white-space: nowrap;
+}
+.brand__mark .b { fill: var(--abysse); stroke: var(--laiton); stroke-width: 0.9; }
+.brand__mark .g { fill: none; stroke: var(--laiton); stroke-width: 1.6; }
+.site-header--dark:not(.is-scrolled) .brand__mark .b { fill: rgba(255,255,255,0.08); }
+.site-footer .brand__mark .b { fill: rgba(255,255,255,0.06); }
+.site-header--dark:not(.is-scrolled) .brand__name { color: #fff; }
+.site-header--dark:not(.is-scrolled) .nav a { color: #fff; }
+.site-header--dark:not(.is-scrolled) .nav a::after { background: #fff; }
+.site-header--dark:not(.is-scrolled) .nav .btn { border-color: rgba(255,255,255,0.7); color: #fff; }
+.site-header--dark:not(.is-scrolled) .nav .btn:hover { background: #fff; color: var(--encre); }
+.site-header--dark:not(.is-scrolled) .nav-toggle span { background: #fff; }
+
+.nav { display: flex; align-items: center; gap: clamp(1.2rem, 2.4vw, 2.4rem); }
+.nav a { font-size: var(--t-sm); font-weight: 600; color: var(--encre); position: relative; padding-block: 0.3rem; }
+.nav a:not(.btn)::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: var(--encre); transform: scaleX(0); transform-origin: right;
+  transition: transform 350ms var(--ease-out);
+}
+.nav a:not(.btn):hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
+.nav .btn { padding: 0.65rem 1.15rem; }
+
+.nav-toggle {
+  display: none; width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer;
+  flex-direction: column; justify-content: center; align-items: center; gap: 6px; padding: 0;
+}
+.nav-toggle span { width: 24px; height: 1.5px; background: var(--encre); transition: transform 300ms, opacity 300ms; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  .nav-toggle { display: flex; }
+  .nav {
+    position: fixed; inset: var(--header-h) 0 0 0; background: var(--brume);
+    flex-direction: column; align-items: flex-start; justify-content: flex-start;
+    padding: var(--s-4) var(--gutter); gap: var(--s-3);
+    transform: translateY(-8px); opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity 300ms, transform 300ms var(--ease-out), visibility 0s 300ms;
+  }
+  .nav.is-open { transform: none; opacity: 1; visibility: visible; pointer-events: auto; transition-delay: 0s; }
+  .nav a { font-size: var(--t-xl); font-family: var(--font-display); font-weight: 400; color: var(--encre) !important; }
+  .nav .btn { font-family: var(--font-body); font-size: var(--t-sm); font-weight: 600; margin-top: var(--s-2); color: var(--encre) !important; border-color: var(--encre) !important; }
+  .site-header.is-open { background: var(--brume); }
+  .site-header.is-open .brand__name { color: var(--encre); }
+  .site-header.is-open .brand__mark .b { fill: var(--abysse); }
+  .site-header.is-open .nav-toggle span { background: var(--encre); }
+  body.nav-locked { overflow: hidden; }
+}
+
+/* ---------- Héros (accueil) ---------- */
+.hero {
+  position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end;
+  padding-top: calc(var(--header-h) + var(--s-5)); padding-bottom: var(--s-6);
+  overflow: hidden;
+}
+.hero__inner { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--s-5); align-items: end; }
+@media (max-width: 900px) { .hero__inner { grid-template-columns: 1fr; } }
+.hero h1 { max-width: 15ch; margin-bottom: var(--s-4); }
+.hero h1 .line { display: block; overflow: hidden; }
+.hero h1 .line > span { display: block; transform: translateY(110%); transition: transform 1100ms var(--ease-out); }
+.hero.is-ready h1 .line > span { transform: none; }
+.hero.is-ready h1 .line:nth-child(2) > span { transition-delay: 90ms; }
+.hero.is-ready h1 .line:nth-child(3) > span { transition-delay: 180ms; }
+.hero__aside { opacity: 0; transform: translateY(14px); transition: opacity 900ms var(--ease-out) 500ms, transform 900ms var(--ease-out) 500ms; }
+.hero.is-ready .hero__aside { opacity: 1; transform: none; }
+.hero__aside p { max-width: 36ch; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
+
+.hero__sky {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(120% 70% at 80% 100%, rgba(196, 162, 78, 0.16) 0%, rgba(196, 162, 78, 0) 60%),
+    linear-gradient(180deg, #f7f8f4 0%, var(--brume) 100%);
+}
+.hero__horizon { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: auto; z-index: -1; pointer-events: none; }
+.hero__horizon path { fill: none; stroke: var(--laiton); stroke-width: 1.2; stroke-linecap: round;
+  stroke-dasharray: 2000; stroke-dashoffset: 2000; transition: stroke-dashoffset 2600ms var(--ease-out) 200ms; }
+.hero__horizon .sun { fill: none; stroke: var(--laiton); stroke-width: 1.2; opacity: 0; transform: translateY(12px);
+  transition: opacity 1200ms 1600ms, transform 1600ms var(--ease-out) 1600ms; }
+.hero.is-ready .hero__horizon path { stroke-dashoffset: 0; }
+.hero.is-ready .hero__horizon .sun { opacity: 1; transform: none; }
+
+.scroll-cue {
+  display: inline-flex; align-items: center; gap: 0.6rem; font-size: var(--t-xs); font-weight: 600; letter-spacing: 0.04em; color: var(--texte-doux);
+  margin-top: var(--s-5);
+}
+.scroll-cue i { width: 40px; height: 1px; background: var(--laiton); display: block; animation: cue 2.4s var(--ease-out) infinite; transform-origin: left; }
+@keyframes cue { 0% { transform: scaleX(0); } 50% { transform: scaleX(1); } 100% { transform: scaleX(0); transform-origin: right; } }
+
+/* ---------- Bandeau de page (pages intérieures) ---------- */
+.page-hero { padding-top: calc(var(--header-h) + var(--s-6)); padding-bottom: var(--s-6); position: relative; overflow: hidden; }
+.page-hero h1 { max-width: 16ch; }
+.page-hero .lead { margin-top: var(--s-2); }
+.page-hero--dark { background: var(--encre); color: var(--texte-inverse); }
+.page-hero--dark h1 { color: #fff; }
+.page-hero--dark .lead { color: #c8d0d3; }
+.page-hero__horizon { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: auto; pointer-events: none; opacity: 0.9; }
+.page-hero__horizon path { fill: none; stroke: var(--laiton); stroke-width: 1; stroke-dasharray: 2000; stroke-dashoffset: 2000; transition: stroke-dashoffset 2400ms var(--ease-out) 150ms; }
+.page-hero.is-ready .page-hero__horizon path { stroke-dashoffset: 0; }
+.breadcrumb { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: var(--t-xs); font-weight: 600; margin-bottom: var(--s-3); color: var(--texte-doux); }
+.breadcrumb li + li::before { content: "/"; margin-right: 0.5rem; opacity: 0.5; }
+.page-hero--dark .breadcrumb { color: #a9b3b8; }
+.breadcrumb a:hover { color: var(--laiton); }
+
+/* ---------- Chiffres clés ---------- */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--pierre); }
+.stats > li { padding: var(--s-4) var(--s-3) var(--s-4) 0; border-bottom: 1px solid var(--pierre); }
+.stats > li + li { border-left: 1px solid var(--pierre); padding-left: var(--s-3); }
+.stat__value { font-family: var(--font-display); font-size: var(--t-2xl); line-height: 1; color: var(--encre); display: flex; align-items: baseline; gap: 0.15em; }
+.stat__value small { font-size: 0.5em; color: var(--laiton-fonce); font-family: var(--font-display); }
+.stat__label { margin-top: var(--s-1); font-size: var(--t-sm); color: var(--texte-doux); max-width: 22ch; }
+@media (max-width: 900px) { .stats { grid-template-columns: repeat(2, 1fr); } .stats > li:nth-child(3) { border-left: 0; padding-left: 0; } }
+@media (max-width: 480px) { .stats { grid-template-columns: 1fr; } .stats > li + li { border-left: 0; padding-left: 0; } }
+.section--dark .stats, .section--dark .stats > li, .section--dark .stats > li + li { border-color: rgba(255,255,255,0.14); }
+.section--dark .stat__value { color: #fff; }
+.section--dark .stat__label { color: #a9b3b8; }
+
+/* ---------- Colonnes éditoriales (approche, critères) ---------- */
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-5) var(--s-4); }
+@media (max-width: 900px) { .pillars { grid-template-columns: 1fr; gap: var(--s-4); } }
+.pillar { padding-top: var(--s-3); position: relative; }
+.pillar .horizon { position: absolute; top: 0; left: 0; }
+.pillar h3 { margin-bottom: var(--s-2); }
+.pillar p { color: var(--texte-doux); max-width: 38ch; }
+.pillar__icon { width: 36px; height: 36px; margin-bottom: var(--s-3); color: var(--laiton); }
+.pillar__icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.2; }
+
+/* ---------- Processus (étapes, séquence réelle) ---------- */
+.steps { counter-reset: step; display: grid; gap: 0; border-top: 1px solid var(--pierre); }
+.step { display: grid; grid-template-columns: 5rem minmax(0, 4fr) minmax(0, 7fr); gap: var(--s-3); padding: var(--s-4) 0; border-bottom: 1px solid var(--pierre); align-items: start; }
+.step::before { counter-increment: step; content: counter(step, decimal-leading-zero); font-family: var(--font-display); font-size: var(--t-xl); color: var(--laiton); line-height: 1; }
+.step h3 { font-size: var(--t-lg); margin: 0; }
+.step p { margin: 0; color: var(--texte-doux); }
+@media (max-width: 800px) { .step { grid-template-columns: 3.5rem 1fr; } .step p { grid-column: 2; } }
+
+/* ---------- Feuille de route ---------- */
+.roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); border-top: 1px solid var(--pierre); }
+@media (max-width: 800px) { .roadmap { grid-template-columns: 1fr; } }
+.roadmap li { padding-top: var(--s-3); position: relative; }
+.roadmap li::before { content: ""; position: absolute; top: -1px; left: 0; width: 48px; height: 1px; background: var(--laiton); }
+.roadmap__year { font-family: var(--font-display); font-size: var(--t-xl); color: var(--abysse); line-height: 1; margin-bottom: var(--s-2); }
+.roadmap p { color: var(--texte-doux); font-size: var(--t-sm); max-width: 34ch; margin: 0; }
+
+/* ---------- Principes (liste éditoriale) ---------- */
+.principles { border-top: 1px solid var(--pierre); }
+.principles li { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--s-3); padding: var(--s-3) 0; border-bottom: 1px solid var(--pierre); }
+@media (max-width: 800px) { .principles li { grid-template-columns: 1fr; gap: var(--s-1); } }
+.principles h3 { font-size: var(--t-lg); margin: 0; }
+.principles p { margin: 0; color: var(--texte-doux); max-width: 56ch; }
+.section--dark .principles, .section--dark .principles li { border-color: rgba(255,255,255,0.14); }
+.section--dark .principles p { color: #b3bfb8; }
+
+/* ---------- Citation / thèse ---------- */
+.quote { font-family: var(--font-display); font-size: var(--t-2xl); line-height: 1.15; max-width: 26ch; color: #fff; margin: 0; }
+.quote + p { margin-top: var(--s-4); }
+.thesis { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: var(--s-6); align-items: end; }
+@media (max-width: 900px) { .thesis { grid-template-columns: 1fr; gap: var(--s-4); } }
+.thesis__aside p { color: #b9c2c6; max-width: 34ch; }
+
+/* ---------- Secteurs ---------- */
+.sectors { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 var(--s-5); border-top: 1px solid var(--pierre); }
+@media (max-width: 700px) { .sectors { grid-template-columns: 1fr; } }
+.sector { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-3); align-items: baseline; padding: var(--s-3) 0; border-bottom: 1px solid var(--pierre); }
+.sector h3 { font-size: var(--t-lg); margin: 0; }
+.sector p { grid-column: 1 / -1; margin: 0; color: var(--texte-doux); font-size: var(--t-sm); max-width: 44ch; }
+.sector__tag { font-size: var(--t-xs); font-weight: 600; color: var(--laiton-fonce); white-space: nowrap; }
+
+/* ---------- Équipe ---------- */
+.team { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-5) var(--s-4); }
+@media (max-width: 900px) { .team { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .team { grid-template-columns: 1fr; } }
+.member figure { margin: 0; }
+.member__photo {
+  aspect-ratio: 4 / 5; background: var(--pierre); overflow: hidden; position: relative;
+  display: grid; place-items: center; border-radius: 2px;
+}
+.member__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1200ms var(--ease-out); }
+.member:hover .member__photo img { transform: scale(1.03); }
+.member__initials { font-family: var(--font-display); font-size: 3.5rem; color: var(--abysse); opacity: 0.45; letter-spacing: 0.05em; }
+.member__photo--org { aspect-ratio: 16 / 9; background: var(--blanc); border: 1px solid var(--pierre); }
+.member__photo--org .member__initials { font-size: 2rem; opacity: 1; letter-spacing: 0.02em; }
+.member figcaption { padding-top: var(--s-3); }
+.member h3 { font-size: var(--t-lg); margin: 0 0 0.2rem; }
+.member__role { color: var(--laiton-fonce); font-size: var(--t-sm); font-weight: 600; margin-bottom: var(--s-2); }
+.member p { color: var(--texte-doux); font-size: var(--t-sm); max-width: 36ch; }
+.member__links { display: flex; gap: var(--s-2); margin-top: var(--s-2); }
+.member__links a { font-size: var(--t-xs); font-weight: 600; border-bottom: 1px solid var(--pierre); }
+.member__links a:hover { border-color: var(--laiton); }
+
+/* ---------- Participations ---------- */
+.portfolio { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
+@media (max-width: 900px) { .portfolio { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .portfolio { grid-template-columns: 1fr; } }
+.holding { background: var(--blanc); border: 1px solid var(--pierre); padding: var(--s-4); display: flex; flex-direction: column; gap: var(--s-2); min-height: 260px; transition: border-color 400ms; }
+.holding:hover { border-color: var(--laiton); }
+.holding__logo { height: 44px; display: flex; align-items: center; font-family: var(--font-display); font-size: 1.6rem; color: var(--abysse); letter-spacing: 0.02em; }
+.holding__logo img { max-height: 44px; width: auto; }
+.holding h3 { font-size: var(--t-lg); margin: var(--s-2) 0 0; }
+.holding p { color: var(--texte-doux); font-size: var(--t-sm); margin: 0; flex: 1; }
+.holding__meta { display: flex; justify-content: space-between; gap: var(--s-2); font-size: var(--t-xs); font-weight: 600; color: var(--laiton-fonce); padding-top: var(--s-2); border-top: 1px solid var(--pierre); }
+.holding--exit .holding__meta { color: var(--texte-doux); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: var(--s-4); }
+.filters button { font: inherit; font-size: var(--t-xs); font-weight: 600; padding: 0.5rem 0.9rem; border: 1px solid var(--pierre); background: transparent; color: var(--texte); border-radius: 999px; cursor: pointer; transition: background 300ms, color 300ms, border-color 300ms; }
+.filters button[aria-pressed="true"], .filters button:hover { background: var(--encre); color: #fff; border-color: var(--encre); }
+.holding.is-hidden { display: none; }
+
+/* ---------- Accordéon (FAQ) ---------- */
+.accordion { border-top: 1px solid var(--pierre); }
+.accordion__item { border-bottom: 1px solid var(--pierre); }
+.accordion__trigger {
+  width: 100%; display: flex; justify-content: space-between; align-items: center; gap: var(--s-3);
+  padding: var(--s-3) 0; background: none; border: 0; cursor: pointer; text-align: left;
+  font-family: var(--font-display); font-size: var(--t-lg); color: var(--encre); line-height: 1.2;
+}
+.accordion__icon { width: 14px; height: 14px; position: relative; flex: none; }
+.accordion__icon::before, .accordion__icon::after { content: ""; position: absolute; background: var(--laiton); inset: 50% 0 auto 0; height: 1px; transition: transform 350ms var(--ease-out); }
+.accordion__icon::after { transform: rotate(90deg); }
+.accordion__trigger[aria-expanded="true"] .accordion__icon::after { transform: rotate(0); }
+.accordion__panel { overflow: hidden; height: 0; transition: height 450ms var(--ease-out); }
+.accordion__panel > div { padding: 0 0 var(--s-3); color: var(--texte-doux); max-width: 64ch; }
+
+/* ---------- Appel à l'action ---------- */
+.cta { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: var(--s-5); align-items: center; }
+@media (max-width: 800px) { .cta { grid-template-columns: 1fr; } }
+.cta h2 { max-width: 18ch; margin: 0; }
+.cta__actions { display: flex; flex-wrap: wrap; gap: var(--s-2); justify-self: end; }
+@media (max-width: 800px) { .cta__actions { justify-self: start; } }
+
+/* ---------- Formulaire de contact ---------- */
+.contact-layout { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--s-6); align-items: start; }
+@media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; gap: var(--s-5); } }
+.contact-info dl { margin: 0; display: grid; gap: var(--s-3); }
+.contact-info dt { font-size: var(--t-xs); font-weight: 700; letter-spacing: 0.02em; color: var(--laiton-fonce); margin-bottom: 0.25rem; }
+.contact-info dd { margin: 0; }
+.contact-info a:hover { color: var(--laiton-fonce); }
+
+.form { display: grid; gap: var(--s-3); }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+@media (max-width: 600px) { .form__row { grid-template-columns: 1fr; } }
+.field { display: grid; gap: 0.4rem; }
+.field label { font-size: var(--t-sm); font-weight: 600; color: var(--encre); }
+.field label em { color: var(--laiton-fonce); font-style: normal; }
+.field input, .field select, .field textarea {
+  font: inherit; font-size: var(--t-md); color: var(--texte);
+  padding: 0.85rem 1rem; background: var(--blanc); border: 1px solid var(--pierre); border-radius: 2px;
+  transition: border-color 300ms, box-shadow 300ms; width: 100%;
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--laiton); box-shadow: 0 0 0 3px rgba(196, 162, 78, 0.2); }
+.field textarea { min-height: 160px; resize: vertical; }
+.field .hint { font-size: var(--t-xs); color: var(--texte-doux); }
+.field.is-invalid input, .field.is-invalid textarea, .field.is-invalid select { border-color: #b3423a; }
+.field .error { font-size: var(--t-xs); color: #b3423a; display: none; }
+.field.is-invalid .error { display: block; }
+.checkbox { display: flex; gap: 0.75rem; align-items: flex-start; font-size: var(--t-sm); color: var(--texte-doux); }
+.checkbox input { margin-top: 0.3rem; accent-color: var(--laiton); }
+.form__footer { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); }
+.form__status { font-size: var(--t-sm); font-weight: 600; color: var(--abysse); }
+.form__status.is-error { color: #b3423a; }
+.honeypot { position: absolute; left: -9999px; }
+
+/* ---------- Texte long (pages légales) ---------- */
+.prose { max-width: 68ch; }
+.prose h2 { font-size: var(--t-xl); margin-top: var(--s-5); }
+.prose h3 { font-size: var(--t-lg); margin-top: var(--s-4); }
+.prose ul { list-style: disc; padding-left: 1.2rem; margin-bottom: var(--s-2); }
+.prose li { margin-bottom: 0.35rem; }
+.prose a { border-bottom: 1px solid var(--laiton); }
+
+/* ---------- Pied de page ---------- */
+.site-footer { background: var(--encre); color: var(--texte-inverse); padding: var(--s-6) 0 var(--s-4); }
+.site-footer .brand__name { color: #fff; }
+.footer__grid { display: grid; grid-template-columns: minmax(0, 5fr) repeat(3, minmax(0, 2fr)); gap: var(--s-5) var(--s-4); }
+@media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .footer__grid { grid-template-columns: 1fr; } }
+.footer__about p { color: #a9b3b8; max-width: 38ch; font-size: var(--t-sm); margin-top: var(--s-3); }
+.footer__col h4 { color: #fff; font-size: var(--t-sm); margin-bottom: var(--s-2); }
+.footer__col li { margin-bottom: 0.5rem; }
+.footer__col a { color: #c8d0d3; font-size: var(--t-sm); transition: color 300ms; }
+.footer__col a:hover { color: var(--laiton); }
+.footer__bottom { margin-top: var(--s-5); padding-top: var(--s-3); border-top: 1px solid rgba(255,255,255,0.12); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2); font-size: var(--t-xs); color: #8e9a9f; }
+.footer__bottom a:hover { color: #fff; }
+.footer__disclaimer { font-size: var(--t-xs); color: #8e9a9f; max-width: 80ch; margin-top: var(--s-3); }
+
+/* ---------- Révélation au défilement (subtile) ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out); }
+.reveal.is-visible { opacity: 1; transform: none; }
+.reveal[data-delay="1"] { transition-delay: 120ms; }
+.reveal[data-delay="2"] { transition-delay: 240ms; }
+.reveal[data-delay="3"] { transition-delay: 360ms; }
+
+/* ---------- Page 404 ---------- */
+.notfound { min-height: 70vh; display: grid; place-items: center; text-align: left; padding-top: var(--header-h); }
+
+/* ---------- Réduction des animations ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-delay: 0s !important; }
+  .reveal { opacity: 1; transform: none; }
+  .hero h1 .line > span, .hero__aside { transform: none; opacity: 1; }
+  .hero__horizon path, .page-hero__horizon path { stroke-dashoffset: 0; }
+  .hero__horizon .sun { opacity: 1; transform: none; }
+  .horizon::after { transform: scaleX(1); }
+}
+
+/* ---------- Impression ---------- */
+@media print {
+  .site-header, .scroll-cue, .nav-toggle, .cta, .hero__horizon { display: none !important; }
+  body { background: #fff; color: #000; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+  .preview-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; background: #0b2e22; color: #e8ece8; font: 600 12px/1.4 Manrope, sans-serif; padding: 8px 16px; text-align: center; opacity: .92; }
+  .preview-banner a { color: #c4a24e; }
+  .view[hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="#accueil" aria-label="Tawila Capital, retour à l'accueil">
+      <svg class="brand__mark" viewBox="0 0 100 100" aria-hidden="true">
+        <g class="b"><rect x="2" y="2" width="12" height="12"/><rect x="18" y="2" width="28" height="12"/><rect x="54" y="2" width="28" height="12"/><rect x="86" y="2" width="12" height="12"/><rect x="2" y="18" width="12" height="28"/><rect x="86" y="18" width="12" height="28"/><rect x="2" y="54" width="12" height="28"/><rect x="86" y="54" width="12" height="28"/><rect x="2" y="86" width="12" height="12"/><rect x="18" y="86" width="28" height="12"/><rect x="54" y="86" width="28" height="12"/><rect x="86" y="86" width="12" height="12"/></g>
+        <g class="g"><path d="M46 14v10H22v22H14"/><path d="M54 14v10h24v22h8"/><path d="M46 86V76H22V54H14"/><path d="M54 86V76h24V54h8"/></g>
+      </svg>
+      <span class="brand__name">Tawila Capital</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="navigation" aria-label="Navigation principale">
+      <a href="#accueil" aria-current="page">Accueil</a>
+      <a href="#le-fonds">Le fonds</a>
+      <a href="#equipe">Équipe</a>
+      <a href="#participations">Participations</a>
+      <a class="btn" href="#contact">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+<div class="view" data-route="accueil" hidden><main id="contenu-accueil">
+  <section class="hero">
+    <div class="hero__sky" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div>
+        <h1>
+          <span class="line"><span>Autour d'une même table,</span></span>
+          <span class="line"><span>le capital, le savoir-faire</span></span>
+          <span class="line"><span>et le réseau.</span></span>
+        </h1>
+        <a class="scroll-cue" href="#approche"><i></i> Découvrir notre approche</a>
+      </div>
+      <div class="hero__aside">
+        <p class="lead">Tawila Capital est un fonds de capital-investissement éthique. Nous finançons et accompagnons, sans dette, des enseignes et des acteurs de l'écosystème halal en France.</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#le-fonds">Découvrir le fonds <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+          <a class="btn" href="#contact">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+    <svg class="hero__horizon" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 150 C 240 138, 520 132, 760 140 S 1240 168, 1440 150"/>
+  <circle class="sun" cx="1160" cy="96" r="42"/>
+</svg>
+  </section>
+
+  <!-- Chiffres clés : issus de la brochure Tawila. Modifier data-count pour changer la valeur animée. -->
+  <section class="section section--tight" aria-labelledby="chiffres-titre">
+    <div class="container">
+      <h2 id="chiffres-titre" class="visually-hidden">Chiffres clés</h2>
+      <ul class="stats reveal">
+        <li><div class="stat__value"><span data-count="8">0</span><small>+</small></div><p class="stat__label">enseignes et sociétés accompagnées</p></li>
+        <li><div class="stat__value"><span data-count="70">0</span><small>+</small></div><p class="stat__label">restaurants du réseau Big M, actionnaire fondateur</p></li>
+        <li><div class="stat__value"><span data-count="40">0</span><small>+</small></div><p class="stat__label">dépôts logistiques DPS Market en France, en Espagne et en Afrique</p></li>
+        <li><div class="stat__value"><span>0</span><small>dette</small></div><p class="stat__label">aucun effet de levier : nous privilégions la croissance, pas l'endettement</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="approche" aria-labelledby="approche-titre">
+    <div class="container">
+      <div class="section-head section-head--split reveal">
+        <h2 id="approche-titre">Tawila signifie « table » en arabe</h2>
+        <p class="lead">L'idée est simple : réunir autour d'une même table des compétences complémentaires, pour faire avancer chaque projet de la manière la plus efficiente possible.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar reveal">
+          <span class="horizon"></span>
+          <div class="pillar__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17c4-6 8-9 18-9M3 21h18"/><circle cx="8" cy="8" r="2.5"/></svg></div>
+          <h3>Investissements directs, sans dette</h3>
+          <p>Nous investissons directement au capital, de manière indépendante et sans effet de levier. Lorsque nos partenaires ont besoin de financements, nous les trouvons sous des formes éthiques.</p>
+        </article>
+        <article class="pillar reveal" data-delay="1">
+          <span class="horizon"></span>
+          <div class="pillar__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 9l7-6 7 6M5 15l7 6 7-6"/></svg></div>
+          <h3>Un accompagnement à 360°</h3>
+          <p>Finance, contrôle de gestion, marketing, communication, stratégie : l'entrepreneur s'appuie sur Tawila sur tous les sujets, pour se concentrer sur son cœur de métier.</p>
+        </article>
+        <article class="pillar reveal" data-delay="2">
+          <span class="horizon"></span>
+          <div class="pillar__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div>
+          <h3>Une approche long terme</h3>
+          <p>Aucune contrainte de sortie ni de structuration. Nous laissons aux entreprises le temps d'atteindre leur plein potentiel de croissance.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark" aria-labelledby="these-titre">
+    <div class="container thesis reveal">
+      <div>
+        <h2 id="these-titre" class="visually-hidden">Notre conviction</h2>
+        <p class="quote">Les deux choses les plus importantes n'apparaissent pas au bilan d'une entreprise : sa réputation et ses hommes.</p>
+      </div>
+      <div class="thesis__aside">
+        <p>Notre ambition est de construire un maillage complet de l'industrie halal en France : des chaînes de restauration, mais aussi les acteurs complémentaires de la logistique, de l'approvisionnement, du financement et du marketing. Une approche à 360° pour optimiser chaque maillon de la chaîne et bâtir un groupe fort et indépendant.</p>
+        <a class="link" href="#le-fonds">Lire la stratégie d'investissement <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="secteurs-titre">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="secteurs-titre">Nos thèmes d'investissement</h2>
+        <p class="lead">Nous investissons dans plusieurs thèmes complémentaires pour maîtriser toute la chaîne de valeur : distribution, restauration, innovation et expérience client.</p>
+      </div>
+      <ul class="sectors reveal">
+        <li class="sector"><h3>Restauration rapide et food courts</h3><span class="sector__tag">Cœur de portefeuille</span><p>Enseignes de burger, poulet grillé, street food thaï, tacos et coffee shops, réunies dans des food courts à la française.</p></li>
+        <li class="sector"><h3>Distribution et logistique alimentaire</h3><span class="sector__tag">Écosystème</span><p>Approvisionnement, traçabilité et déploiement rapide des marques grâce à un réseau de dépôts paneuropéen.</p></li>
+        <li class="sector"><h3>Financement éthique</h3><span class="sector__tag">Écosystème</span><p>Solutions de financement respectueuses des fondamentaux de la finance éthique, pour accompagner le développement de chaque marque.</p></li>
+        <li class="sector"><h3>Marketing, communication et digital</h3><span class="sector__tag">Écosystème</span><p>Identité visuelle, réseaux sociaux, production de contenus et applications mobiles au service des enseignes du groupe.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--white" aria-labelledby="participations-titre">
+    <div class="container">
+      <div class="section-head section-head--split reveal">
+        <h2 id="participations-titre">Quelques enseignes accompagnées</h2>
+        <p class="lead">Des concepts différenciants, pensés pour le mass-market urbain, portés par des équipes qui connaissent le terrain.</p>
+      </div>
+      <div class="portfolio">
+        <article class="holding reveal"><div class="holding__logo">Fatburger</div><h3>L'icône du burger made in L.A.</h3><p>Née en 1947 à Los Angeles, la marque culte du burger américain arrive en France en version halal, en master-franchise exclusive.</p><div class="holding__meta"><span>Restauration</span><span>Master-franchise France</span></div></article>
+        <article class="holding reveal" data-delay="1"><div class="holding__logo">Koboon</div><h3>Street food thaï haut de gamme</h3><p>Première enseigne de street food thaï raffinée en France, avec des recettes élaborées par le chef Oth Sombath.</p><div class="holding__meta"><span>Restauration</span><span>Ambition européenne</span></div></article>
+        <article class="holding reveal" data-delay="2"><div class="holding__logo">All Day Snack</div><h3>La street food à la française</h3><p>Chicken tikka, wraps, smash burgers, naans : une carte riche et évolutive, calibrée pour la livraison et le click and collect.</p><div class="holding__meta"><span>Restauration</span><span>Franchise</span></div></article>
+      </div>
+      <p style="margin-top: var(--s-4)"><a class="link" href="#participations">Voir toutes les participations <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a></p>
+    </div>
+  </section>
+
+  
+<section class="section section--abysse">
+  <div class="container cta reveal">
+    <h2>Vous portez un concept ou une entreprise à fort potentiel ?</h2>
+    <div class="cta__actions">
+      <a class="btn btn--light btn--solid" href="#contact">Présenter votre projet <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      <a class="btn btn--light" href="#le-fonds">Découvrir le fonds</a>
+    </div>
+  </div>
+</section>
+</main></div>
+<div class="view" data-route="le-fonds" hidden><main id="contenu-le-fonds">
+  
+<section class="page-hero page-hero--dark">
+  <div class="container">
+    <ol class="breadcrumb" aria-label="Fil d'Ariane"><li><a href="#accueil">Accueil</a></li><li aria-current="page">Le fonds</li></ol>
+    <h1>Financer la croissance, pas l'endettement.</h1>
+    <p class="lead">Tawila Capital investit au capital de TPE et PME non cotées de l'écosystème halal, pour financer leur démarrage, leur développement ou leur acquisition. Toujours en direct, toujours sans effet de levier.</p>
+  </div>
+  <svg class="page-hero__horizon" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 150 C 240 138, 520 132, 760 140 S 1240 168, 1440 150"/>
+  
+</svg>
+</section>
+
+  <section class="section" aria-labelledby="these2-titre">
+    <div class="container grid grid--side">
+      <div class="reveal">
+        <h2 id="these2-titre">Notre thèse</h2>
+      </div>
+      <div class="reveal" data-delay="1">
+        <p class="lead">Aider à la création et au développement d'entreprises innovantes sur le marché de la restauration halal, et redéfinir la stratégie et la gestion de sociétés dont nous pensons qu'elles pourraient être plus rentables.</p>
+        <p>Notre fonds fermé entre au capital d'entreprises relativement petites, généralement non cotées, pour financer leur amorçage et leur développement et accélérer leur croissance. Contrairement à un fonds classique dont les premières années dégagent souvent des rendements faibles, notre stratégie se concentre sur des sociétés au potentiel identifié qui, une fois intégrées au groupe, bénéficient immédiatement de notre apport complet : marques, logistique, formation, marketing et réseau.</p>
+        <p>Nos opérations échappent au champ des principaux fonds de capital-investissement, qui travaillent surtout en LBO. Nous privilégions la croissance, et non l'endettement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="criteres" aria-labelledby="criteres-titre">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="criteres-titre">Critères d'investissement</h2>
+        <p class="lead">Des repères clairs pour gagner du temps, de part et d'autre.</p>
+      </div>
+      <ul class="stats reveal">
+        <li><div class="stat__value"><span>TPE et PME</span></div><p class="stat__label">sociétés non cotées, de l'amorçage au développement</p></li>
+        <li><div class="stat__value"><span>Halal</span></div><p class="stat__label">restauration et acteurs complémentaires de la chaîne de valeur</p></li>
+        <li><div class="stat__value"><span>Direct</span></div><p class="stat__label">investissements directs, transactions indépendantes, partenariats flexibles et évolutifs</p></li>
+        <li><div class="stat__value"><span>Sans dette</span></div><p class="stat__label">aucun effet de levier, financements éthiques si nécessaire</p></li>
+      </ul>
+      <div class="pillars" style="margin-top: var(--s-6)">
+        <article class="pillar reveal"><span class="horizon"></span><h3>Capital-risque</h3><p>Dédié aux start-ups et concepts pas encore rentables, pour financer le démarrage et les premières ouvertures.</p></article>
+        <article class="pillar reveal" data-delay="1"><span class="horizon"></span><h3>Capital-développement</h3><p>Dédié aux entreprises plus matures, pour accélérer le maillage territorial, la franchise et l'international.</p></article>
+        <article class="pillar reveal" data-delay="2"><span class="horizon"></span><h3>Acquisition et intégration</h3><p>Reprise de marques à fort potentiel, intégrées au groupe pour bénéficier de nos synergies dès le premier jour.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="processus" aria-labelledby="processus-titre">
+    <div class="container">
+      <div class="section-head section-head--split reveal">
+        <h2 id="processus-titre">Un processus en cinq étapes</h2>
+        <p class="lead">De la première rencontre à l'intégration au groupe, avec des interlocuteurs identifiés à chaque étape.</p>
+      </div>
+      <ol class="steps reveal">
+        <li class="step"><h3>Recherche et prospection</h3><p>Nous allons chercher les futures pépites françaises : concepts différenciants, équipes engagées, marchés porteurs.</p></li>
+        <li class="step"><h3>Analyse complète</h3><p>Étude du concept, du modèle économique, de la direction et des besoins des actionnaires existants. Un accord de confidentialité est signé avant tout échange détaillé.</p></li>
+        <li class="step"><h3>Structuration sans dette</h3><p>Prise de participation directe en fonds propres. Si un financement complémentaire est nécessaire, nous le structurons sous une forme éthique.</p></li>
+        <li class="step"><h3>Intégration au groupe</h3><p>Accès immédiat à la logistique, au centre de formation, aux conditions négociées avec les agrégateurs et à l'agence créative intégrée.</p></li>
+        <li class="step"><h3>Accompagnement à 360°</h3><p>Finance, contrôle de gestion, marketing, communication, stratégie et réseau : nous restons à la table, sans contrainte de sortie.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--dark" aria-labelledby="roadmap-titre">
+    <div class="container">
+      <div class="section-head section-head--split reveal">
+        <h2 id="roadmap-titre">Construire l'écosystème halal le plus puissant d'Europe</h2>
+        <p class="lead" style="color:#c8d2cc">Notre mission : accompagner la croissance de marques halal innovantes et rentables, en leur apportant capital, savoir-faire opérationnel et réseau stratégique.</p>
+      </div>
+      <ol class="roadmap reveal">
+        <li><div class="roadmap__year" style="color:#fff">2025</div><p style="color:#b3bfb8">Lancement de quatre nouveaux concepts et food courts urbains.</p></li>
+        <li><div class="roadmap__year" style="color:#fff">2026</div><p style="color:#b3bfb8">200 points de vente actifs, toutes marques confondues, sur des emplacements premium.</p></li>
+        <li><div class="roadmap__year" style="color:#fff">2027</div><p style="color:#b3bfb8">Présence nationale consolidée et premiers pilotes à l'international : Espagne, Royaume-Uni, Maghreb.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--white" id="investisseurs" aria-labelledby="investisseurs-titre">
+    <div class="container grid grid--side">
+      <div class="reveal"><h2 id="investisseurs-titre">Investir avec Tawila</h2></div>
+      <div class="reveal" data-delay="1">
+        <p class="lead">Des projets tangibles, opérés par des équipes éprouvées, financés sans dette et suivis dans la durée.</p>
+        <p>Tawila propose à des investisseurs avertis de co-investir à ses côtés dans les ouvertures et concepts du groupe. Chaque projet s'appuie sur les marques, le savoir-faire opérationnel, l'infrastructure logistique et la gestion quotidienne assurés par le groupe.</p>
+        <p class="muted">Les informations relatives aux véhicules d'investissement et à leurs modalités sont réservées aux investisseurs avertis et communiquées sur demande.</p>
+        <a class="link" href="#contact">Demander une présentation <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq-titre">
+    <div class="container grid grid--side">
+      <div class="reveal">
+        <h2 id="faq-titre">Questions fréquentes</h2>
+        <p class="muted">Les réponses aux questions que nous posent le plus souvent les entrepreneurs, les franchisés et les investisseurs.</p>
+      </div>
+      <div class="accordion reveal" data-delay="1">
+        <div class="accordion__item">
+          <h3><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-1">Dans quels types d'entreprises investissez-vous ?</button></h3>
+          <div class="accordion__panel" id="faq-1"><div><p>Dans des TPE et PME non cotées de l'écosystème halal : enseignes de restauration en priorité, mais aussi les acteurs complémentaires de la logistique, de l'approvisionnement, du financement et du marketing.</p></div></div>
+        </div>
+        <div class="accordion__item">
+          <h3><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-2">Pourquoi investir sans dette ?</button></h3>
+          <div class="accordion__panel" id="faq-2"><div><p>Parce que nous privilégions la croissance à l'endettement. L'absence d'effet de levier protège l'entreprise et ses équipes, et nous permet de rester fidèles à nos principes éthiques. Lorsqu'un financement complémentaire est utile, nous le structurons sous une forme éthique.</p></div></div>
+        </div>
+        <div class="accordion__item">
+          <h3><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-3">Quel est votre horizon de détention ?</button></h3>
+          <div class="accordion__panel" id="faq-3"><div><p>Nous n'avons pas de contrainte de sortie ni de structuration. Nous accompagnons les entreprises le temps nécessaire pour qu'elles atteignent leur plein potentiel, avec l'objectif d'afficher des rendements croissants dans la durée.</p></div></div>
+        </div>
+        <div class="accordion__item">
+          <h3><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-4">Que préparer pour un premier échange ?</button></h3>
+          <div class="accordion__panel" id="faq-4"><div><p>Une présentation du concept, de l'équipe et des chiffres clés suffit. Nous signons un accord de confidentialité avant tout échange détaillé.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="section section--abysse">
+  <div class="container cta reveal">
+    <h2>Parlons de votre projet, sans engagement.</h2>
+    <div class="cta__actions">
+      <a class="btn btn--light btn--solid" href="#contact">Présenter votre projet <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      <a class="btn btn--light" href="#equipe">Rencontrer l'équipe</a>
+    </div>
+  </div>
+</section>
+</main></div>
+<div class="view" data-route="equipe" hidden><main id="contenu-equipe">
+  
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb" aria-label="Fil d'Ariane"><li><a href="#accueil">Accueil</a></li><li aria-current="page">Équipe</li></ol>
+    <h1>Des entrepreneurs qui investissent, des investisseurs qui opèrent.</h1>
+    <p class="lead">Tawila Capital réunit des acteurs de terrain de la distribution, de la restauration et de la finance. Des décennies de relations et d'expérience entrepreneuriale qui profitent à chaque société accompagnée.</p>
+  </div>
+  <svg class="page-hero__horizon" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 150 C 240 138, 520 132, 760 140 S 1240 168, 1440 150"/>
+  
+</svg>
+</section>
+
+  <section class="section section--white" aria-labelledby="actionnaires-titre">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="actionnaires-titre">Actionnariat et gouvernance</h2>
+        <p class="lead">Trois actionnaires fondateurs, complémentaires par nature : un distributeur, un restaurateur et un financier.</p>
+      </div>
+      <div class="team">
+        
+<article class="member reveal">
+  <figure>
+    <!-- Remplacer le bloc ci-dessous par <img src="assets/img/equipe/nom.jpg" alt="Portrait de Groupe DPS Market" width="800" height="1000" loading="lazy"> -->
+    <div class="member__photo member__photo--org" role="img" aria-label="Logo de Groupe DPS Market"><span class="member__initials" aria-hidden="true">DPS Market</span></div>
+    <figcaption>
+      <h3>Groupe DPS Market</h3>
+      <p class="member__role">Actionnaire fondateur, créé en 2001</p>
+      <p>Leader de la distribution alimentaire halal en France, le Groupe DPS Market compte plus de 40 dépôts sur le territoire national, en Espagne et en Afrique. Il apporte au groupe son intégration verticale, du sourcing à la distribution.</p>
+    </figcaption>
+  </figure>
+</article>
+        
+<article class="member reveal" data-delay="1">
+  <figure>
+    <!-- Remplacer le bloc ci-dessous par <img src="assets/img/equipe/nom.jpg" alt="Portrait de Big M" width="800" height="1000" loading="lazy"> -->
+    <div class="member__photo member__photo--org" role="img" aria-label="Logo de Big M"><span class="member__initials" aria-hidden="true">Big M</span></div>
+    <figcaption>
+      <h3>Big M</h3>
+      <p class="member__role">Actionnaire fondateur, créé en 2019</p>
+      <p>Pionnier du fast-food halal en France, fondé en région parisienne, Big M compte plus de 70 restaurants. Il apporte son expertise de l'exploitation multi-site, son centre de formation interne et sa capacité d'innovation produit.</p>
+    </figcaption>
+  </figure>
+</article>
+        
+<article class="member reveal" data-delay="2">
+  <figure>
+    <!-- Remplacer le bloc ci-dessous par <img src="assets/img/equipe/nom.jpg" alt="Portrait de Ryad Yahia Cherif" width="800" height="1000" loading="lazy"> -->
+    <div class="member__photo" role="img" aria-label="Portrait de Ryad Yahia Cherif"><span class="member__initials" aria-hidden="true">RYC</span></div>
+    <figcaption>
+      <h3>Ryad Yahia Cherif</h3>
+      <p class="member__role">Actionnaire fondateur, structuration financière et stratégique</p>
+      <p>Fort de plus de 12 ans d'expérience dans la finance et l'investissement, il pilote la structuration financière et stratégique du groupe et accompagne les marques dans leurs levées de fonds, jusqu'à leur valorisation.</p>
+    </figcaption>
+  </figure>
+</article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="personnes-titre">
+    <div class="container">
+      <div class="section-head section-head--split reveal">
+        <h2 id="personnes-titre">Les personnes clés</h2>
+        <p class="lead">Les dirigeants qui opèrent au quotidien les enseignes et les services du groupe. Photos et biographies détaillées à compléter.</p>
+      </div>
+      <div class="team">
+        
+<article class="member reveal">
+  <figure>
+    <!-- Remplacer le bloc ci-dessous par <img src="assets/img/equipe/nom.jpg" alt="Portrait de Mehdi Bella" width="800" height="1000" loading="lazy"> -->
+    <div class="member__photo" role="img" aria-label="Portrait de Mehdi Bella"><span class="member__initials" aria-hidden="true">MB</span></div>
+    <figcaption>
+      <h3>Mehdi Bella</h3>
+      <p class="member__role">Co-fondateur, Big M</p>
+      <p>Co-fondateur de Big M en 2019, il a fait passer l'enseigne d'un premier restaurant à un réseau de plus de 70 points de vente en France et au Sénégal.</p>
+    </figcaption>
+  </figure>
+</article>
+        
+<article class="member reveal" data-delay="1">
+  <figure>
+    <!-- Remplacer le bloc ci-dessous par <img src="assets/img/equipe/nom.jpg" alt="Portrait de Yanis Ourabia" width="800" height="1000" loading="lazy"> -->
+    <div class="member__photo" role="img" aria-label="Portrait de Yanis Ourabia"><span class="member__initials" aria-hidden="true">YO</span></div>
+    <figcaption>
+      <h3>Yanis Ourabia</h3>
+      <p class="member__role">Co-fondateur, Big M</p>
+      <p>Co-fondateur de Big M, il porte le développement du concept et la standardisation des recettes et procédures qui rendent le modèle réplicable.</p>
+    </figcaption>
+  </figure>
+</article>
+        
+<article class="member reveal" data-delay="2">
+  <figure>
+    <!-- Remplacer le bloc ci-dessous par <img src="assets/img/equipe/nom.jpg" alt="Portrait de Yassine El Youssi" width="800" height="1000" loading="lazy"> -->
+    <div class="member__photo" role="img" aria-label="Portrait de Yassine El Youssi"><span class="member__initials" aria-hidden="true">YEY</span></div>
+    <figcaption>
+      <h3>Yassine El Youssi</h3>
+      <p class="member__role">Directeur général, Big M</p>
+      <p>Il pilote l'exploitation du réseau, le suivi des ratios clés et l'accompagnement des franchisés.</p>
+    </figcaption>
+  </figure>
+</article>
+        
+<article class="member reveal">
+  <figure>
+    <!-- Remplacer le bloc ci-dessous par <img src="assets/img/equipe/nom.jpg" alt="Portrait de Anis Belkadi" width="800" height="1000" loading="lazy"> -->
+    <div class="member__photo" role="img" aria-label="Portrait de Anis Belkadi"><span class="member__initials" aria-hidden="true">AB</span></div>
+    <figcaption>
+      <h3>Anis Belkadi</h3>
+      <p class="member__role">Fondateur, The Follow Movement</p>
+      <p>Plus de 10 ans d'expérience. Il dirige l'agence créative intégrée du groupe, spécialisée dans l'univers food and beverage.</p>
+    </figcaption>
+  </figure>
+</article>
+        
+<article class="member reveal" data-delay="1">
+  <figure>
+    <!-- Remplacer le bloc ci-dessous par <img src="assets/img/equipe/nom.jpg" alt="Portrait de Sabri M'barki" width="800" height="1000" loading="lazy"> -->
+    <div class="member__photo" role="img" aria-label="Portrait de Sabri M'barki"><span class="member__initials" aria-hidden="true">SM</span></div>
+    <figcaption>
+      <h3>Sabri M'barki</h3>
+      <p class="member__role">Directeur marketing, The Follow Movement</p>
+      <p>Plus de 5 ans d'expérience. Il conçoit les campagnes à fort engagement qui accompagnent le déploiement des enseignes.</p>
+    </figcaption>
+  </figure>
+</article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark" id="principes" aria-labelledby="principes-titre">
+    <div class="container">
+      <div class="section-head section-head--split reveal">
+        <h2 id="principes-titre">Nos principes</h2>
+        <p class="lead" style="color:#c8d2cc">Cinq convictions qui guident chaque décision d'investissement et chaque relation avec les entrepreneurs.</p>
+      </div>
+      <ul class="principles reveal">
+        <li><h3>Le temps est notre atout le plus précieux</h3><p>Nous exploitons pleinement les possibilités de création de valeur en anticipant avec patience les transactions, avec des allocations de capital qui correspondent aux exigences fondamentales de l'entreprise et du marché.</p></li>
+        <li><h3>Un but précis et constant</h3><p>Notre compréhension approfondie des entreprises et des marchés dans lesquels nous investissons nous donne une vision claire de notre trajectoire. Nous restons fidèles à notre chemin.</p></li>
+        <li><h3>Une exécution optimale</h3><p>Nous sommes nous-mêmes des acteurs du marché. Nous orientons nos ressources, notre vivier de talents et notre réseau vers les entreprises dans lesquelles nous investissons.</p></li>
+        <li><h3>Un esprit axé sur les solutions</h3><p>Notre flexibilité nous permet de nous structurer différemment et de trouver des solutions adaptées, tant au niveau actionnarial qu'opérationnel. Aucun défi commercial n'est insurmontable.</p></li>
+        <li><h3>La passion pour l'investissement</h3><p>Nous aimons ce que nous faisons et valorisons la dimension humaine de l'investissement et des relations qui contribuent à la réussite.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--white" aria-labelledby="forces-titre">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="forces-titre">Ce que le groupe apporte à chaque enseigne</h2>
+      </div>
+      <div class="pillars">
+        <article class="pillar reveal"><span class="horizon"></span><h3>Intégration verticale</h3><p>Du sourcing à la distribution, avec un réseau logistique paneuropéen qui assure traçabilité, qualité et optimisation des coûts.</p></article>
+        <article class="pillar reveal" data-delay="1"><span class="horizon"></span><h3>Expertise opérationnelle</h3><p>Une maîtrise reconnue de l'exploitation multi-site et un centre de formation interne pour standardiser les process et fidéliser les équipes.</p></article>
+        <article class="pillar reveal" data-delay="2"><span class="horizon"></span><h3>Marketing et partenariats</h3><p>Une communication à 360°, des conditions optimisées avec les plateformes de livraison et des partenariats durables avec des marques internationales.</p></article>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="section section--abysse">
+  <div class="container cta reveal">
+    <h2>Envie de rejoindre la table ?</h2>
+    <div class="cta__actions">
+      <a class="btn btn--light btn--solid" href="#contact">Nous écrire <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      <a class="btn btn--light" href="#participations">Voir les participations</a>
+    </div>
+  </div>
+</section>
+</main></div>
+<div class="view" data-route="participations" hidden><main id="contenu-participations">
+  
+<section class="page-hero page-hero--dark">
+  <div class="container">
+    <ol class="breadcrumb" aria-label="Fil d'Ariane"><li><a href="#accueil">Accueil</a></li><li aria-current="page">Participations</li></ol>
+    <h1>Des marques complémentaires, un même écosystème.</h1>
+    <p class="lead">Restauration, food courts, coffee shop, agence créative : chaque participation renforce les autres. Nous sommes par ailleurs en discussion avec de nouveaux concepts dans des thématiques complémentaires.</p>
+  </div>
+  <svg class="page-hero__horizon" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 150 C 240 138, 520 132, 760 140 S 1240 168, 1440 150"/>
+  
+</svg>
+</section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filters reveal" role="group" aria-label="Filtrer les participations">
+        <button type="button" data-filter="all" aria-pressed="true">Toutes</button>
+        <button type="button" data-filter="restauration" aria-pressed="false">Restauration</button>
+        <button type="button" data-filter="foodcourt" aria-pressed="false">Food court</button>
+        <button type="button" data-filter="services" aria-pressed="false">Services</button>
+        <button type="button" data-filter="ecosysteme" aria-pressed="false">Écosystème fondateur</button>
+      </div>
+      <!-- data-tags pilote les filtres. Ajouter une carte = copier un bloc <article class="holding"> -->
+      <div class="portfolio">
+        
+<article class="holding reveal" data-tags="restauration">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="Fatburger" height="44" loading="lazy"> -->
+  <div class="holding__logo">Fatburger</div>
+  <h3>L'icône du burger made in L.A.</h3>
+  <p>Née en 1947 à Los Angeles, « The Last Great Hamburger Stand » propose des burgers cuisinés à la commande, généreux et sur-mesure. Tawila introduit ce concept iconique en France, en version halal et premium.</p>
+  <div class="holding__meta"><span>Restauration</span><span>Master-franchise France</span></div>
+</article>
+        
+<article class="holding reveal" data-delay="1" data-tags="restauration">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="Buffalo's Café" height="44" loading="lazy"> -->
+  <div class="holding__logo">Buffalo's Café</div>
+  <h3>Le vrai goût du poulet grillé américain</h3>
+  <p>Issu du même groupe que Fatburger, Buffalo's Café propose une expérience 100 % poulet grillé à la flamme, en version halal. Les deux enseignes sont souvent regroupées dans les mêmes zones ou drives.</p>
+  <div class="holding__meta"><span>Restauration</span><span>Master-franchise France</span></div>
+</article>
+        
+<article class="holding reveal" data-delay="2" data-tags="restauration">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="Koboon" height="44" loading="lazy"> -->
+  <div class="holding__logo">Koboon</div>
+  <h3>Street food thaï haut de gamme</h3>
+  <p>Première enseigne de street food thaï raffinée en France, avec des recettes élaborées par le chef Oth Sombath. Ambition : devenir la première chaîne de fast food thaï en Europe.</p>
+  <div class="holding__meta"><span>Restauration</span><span>Enseigne</span></div>
+</article>
+        
+<article class="holding reveal" data-tags="restauration">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="Tacos Lab" height="44" loading="lazy"> -->
+  <div class="holding__logo">Tacos Lab</div>
+  <h3>Le tacos nouvelle génération</h3>
+  <p>La réponse halal et créative à un marché ultra-dynamique : tacos sur-mesure, carte audacieuse et packaging pensé pour la livraison et les réseaux sociaux.</p>
+  <div class="holding__meta"><span>Restauration</span><span>Enseigne</span></div>
+</article>
+        
+<article class="holding reveal" data-delay="1" data-tags="restauration">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="All Day Snack" height="44" loading="lazy"> -->
+  <div class="holding__logo">All Day Snack</div>
+  <h3>La street food à la française</h3>
+  <p>Chicken tikka, wraps, smash burgers, naans : une carte riche et évolutive, sans compromis sur le goût, la fraîcheur et la qualité des produits.</p>
+  <div class="holding__meta"><span>Restauration</span><span>Franchise</span></div>
+</article>
+        
+<article class="holding reveal" data-delay="2" data-tags="restauration">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="Big Crousty" height="44" loading="lazy"> -->
+  <div class="holding__logo">Big Crousty</div>
+  <h3>Comfort food inspirée d'Asie</h3>
+  <p>Riz parfumé, poulet croustillant pané et sauces maison, avec des déclinaisons crevette, tandoori ou crousty duo. Un produit très adapté à la livraison.</p>
+  <div class="holding__meta"><span>Restauration</span><span>Enseigne</span></div>
+</article>
+        
+<article class="holding reveal" data-tags="restauration foodcourt">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="Brooklyn Chicken Club" height="44" loading="lazy"> -->
+  <div class="holding__logo">Brooklyn Chicken Club</div>
+  <h3>Le chicken sandwich urbain</h3>
+  <p>Un concept généreux et visuellement percutant, inspiré des recettes américaines et réinterprété à la française. « Un club. Un crew. Une claque. »</p>
+  <div class="holding__meta"><span>Restauration</span><span>Concept</span></div>
+</article>
+        
+<article class="holding reveal" data-delay="1" data-tags="restauration">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="Big Coffee" height="44" loading="lazy"> -->
+  <div class="holding__logo">Big Coffee</div>
+  <h3>Le coffee shop signature de Big M</h3>
+  <p>Café, frappés, thés glacés, desserts gourmands et douceurs orientales, en intégration dans les restaurants Big M ou en corner autonome dans les lieux à fort trafic.</p>
+  <div class="holding__meta"><span>Coffee shop</span><span>Concept</span></div>
+</article>
+        
+<article class="holding reveal" data-delay="2" data-tags="foodcourt">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="Big Canteen" height="44" loading="lazy"> -->
+  <div class="holding__logo">Big Canteen</div>
+  <h3>Le food court à la française</h3>
+  <p>Plusieurs enseignes du groupe réunies dans un même espace, avec une borne de commande unique et une cuisine centralisée. Une expérience fluide pour les familles et les groupes.</p>
+  <div class="holding__meta"><span>Food court</span><span>Concept</span></div>
+</article>
+        
+<article class="holding reveal" data-tags="services">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="The Follow Movement" height="44" loading="lazy"> -->
+  <div class="holding__logo">The Follow Movement</div>
+  <h3>L'agence créative intégrée</h3>
+  <p>Agence de communication et marketing à 360°, spécialisée dans l'univers food and beverage : identité visuelle, réseaux sociaux, contenus, web et applications mobiles.</p>
+  <div class="holding__meta"><span>Services</span><span>Agence du groupe</span></div>
+</article>
+        
+<article class="holding reveal" data-delay="1" data-tags="ecosysteme">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="DPS Market" height="44" loading="lazy"> -->
+  <div class="holding__logo">DPS Market</div>
+  <h3>Distribution alimentaire halal</h3>
+  <p>Leader du cash and carry spécialisé depuis 2001, avec plus de 40 dépôts en France, en Espagne et en Afrique. Actionnaire fondateur de Tawila Capital.</p>
+  <div class="holding__meta"><span>Distribution</span><span>Actionnaire fondateur</span></div>
+</article>
+        
+<article class="holding reveal" data-delay="2" data-tags="ecosysteme restauration">
+  <!-- Remplacer le texte du logo par <img src="assets/img/participations/nom.png" alt="Big M" height="44" loading="lazy"> -->
+  <div class="holding__logo">Big M</div>
+  <h3>Pionnier du fast-food halal</h3>
+  <p>Fondé en 2019 en région parisienne, plus de 70 restaurants en France et au Sénégal. Actionnaire fondateur de Tawila Capital.</p>
+  <div class="holding__meta"><span>Restauration</span><span>Actionnaire fondateur</span></div>
+</article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" aria-labelledby="avenir-titre">
+    <div class="container grid grid--side">
+      <div class="reveal"><h2 id="avenir-titre">Plus à venir</h2></div>
+      <div class="reveal" data-delay="1">
+        <p class="lead">Nous sommes actuellement en discussions et négociations avec des concepts et des pépites auxquels nous croyons, dans des thématiques complémentaires et à fort potentiel.</p>
+        <a class="link" href="#contact">Nous présenter votre concept <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="section section--abysse">
+  <div class="container cta reveal">
+    <h2>Votre enseigne pourrait figurer ici.</h2>
+    <div class="cta__actions">
+      <a class="btn btn--light btn--solid" href="#contact">Présenter votre projet <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+      <a class="btn btn--light" href="#le-fonds" data-anchor="criteres">Nos critères</a>
+    </div>
+  </div>
+</section>
+</main></div>
+<div class="view" data-route="contact" hidden><main id="contenu-contact">
+  
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb" aria-label="Fil d'Ariane"><li><a href="#accueil">Accueil</a></li><li aria-current="page">Contact</li></ol>
+    <h1>Prenons place autour de la table.</h1>
+    <p class="lead">Entrepreneurs, franchisés, investisseurs, conseils : nous lisons chaque message et répondons sous 48 heures ouvrées.</p>
+  </div>
+  <svg class="page-hero__horizon" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 150 C 240 138, 520 132, 760 140 S 1240 168, 1440 150"/>
+  
+</svg>
+</section>
+
+  <section class="section section--white">
+    <div class="container contact-layout">
+      <aside class="contact-info reveal">
+        <dl>
+          <div><dt>Adresse</dt><dd>Adresse à compléter<br>Paris, France</dd></div>
+          <div><dt>Téléphone</dt><dd><a href="tel:+33100000000">+33 1 00 00 00 00</a></dd></div>
+          <div><dt>E-mail</dt><dd><a href="mailto:contact@tawilacapital.fr">contact@tawilacapital.fr</a></dd></div>
+          <div><dt>Entrepreneurs et franchisés</dt><dd>Envoyez-nous une présentation de votre concept, de votre équipe et de vos chiffres clés. Un accord de confidentialité est signé avant tout échange détaillé.</dd></div>
+          <div><dt>Investisseurs</dt><dd>Les informations relatives aux véhicules d'investissement sont réservées aux investisseurs avertis et communiquées sur demande.</dd></div>
+        </dl>
+      </aside>
+
+      <div class="reveal" data-delay="1">
+        <!--
+          WORDPRESS : remplacer l'ensemble de ce formulaire par le shortcode WPForms Pro,
+          par exemple [wpforms id="123" title="false"], ou par le widget WPForms d'Elementor.
+          Les champs ci-dessous servent de modèle pour construire le formulaire dans WPForms
+          (voir docs/WORDPRESS-ELEMENTOR.md).
+        -->
+        <form class="form" action="#" method="post" novalidate aria-describedby="form-aide">
+          <p id="form-aide" class="muted" style="font-size: var(--t-sm)">Les champs marqués d'un astérisque sont obligatoires.</p>
+          <div class="form__row">
+            <div class="field">
+              <label for="prenom">Prénom <em>*</em></label>
+              <input id="prenom" name="prenom" type="text" autocomplete="given-name" required>
+              <span class="error">Merci d'indiquer votre prénom.</span>
+            </div>
+            <div class="field">
+              <label for="nom">Nom <em>*</em></label>
+              <input id="nom" name="nom" type="text" autocomplete="family-name" required>
+              <span class="error">Merci d'indiquer votre nom.</span>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="email">E-mail <em>*</em></label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+              <span class="error">Merci d'indiquer une adresse e-mail valide.</span>
+            </div>
+            <div class="field">
+              <label for="telephone">Téléphone</label>
+              <input id="telephone" name="telephone" type="tel" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="societe">Société ou enseigne</label>
+              <input id="societe" name="societe" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="profil">Vous êtes <em>*</em></label>
+              <select id="profil" name="profil" required>
+                <option value="">Sélectionner</option>
+                <option>Entrepreneur ou porteur de concept</option>
+                <option>Franchisé ou futur franchisé</option>
+                <option>Investisseur</option>
+                <option>Conseil ou intermédiaire</option>
+                <option>Bailleur ou foncière</option>
+                <option>Candidat</option>
+                <option>Presse</option>
+                <option>Autre</option>
+              </select>
+              <span class="error">Merci de préciser votre profil.</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Votre message <em>*</em></label>
+            <textarea id="message" name="message" required minlength="20"></textarea>
+            <span class="hint">Quelques lignes sur votre concept, votre implantation et votre objectif suffisent pour un premier échange.</span>
+            <span class="error">Merci de décrire votre demande en quelques lignes.</span>
+          </div>
+          <label class="checkbox">
+            <input type="checkbox" name="consentement" required>
+            <span>J'accepte que mes données soient traitées par Tawila Capital pour répondre à ma demande, conformément à la <a href="#politique-de-confidentialite" style="border-bottom:1px solid var(--laiton)">politique de confidentialité</a>. <em>*</em></span>
+          </label>
+          <div class="honeypot" aria-hidden="true"><label>Ne pas remplir <input type="text" name="site_web" tabindex="-1" autocomplete="off"></label></div>
+          <div class="form__footer">
+            <button class="btn btn--solid" type="submit">Envoyer le message <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></button>
+            <p class="form__status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="acces-titre">
+    <div class="container grid grid--side">
+      <div class="reveal"><h2 id="acces-titre">Venir nous voir</h2></div>
+      <div class="reveal" data-delay="1">
+        <p>Nos bureaux sont situés à Paris. Adresse et accès à compléter. Sur rendez-vous uniquement.</p>
+        <!-- WORDPRESS : insérer ici une carte (widget Google Maps Elementor) si souhaité -->
+        <div style="aspect-ratio: 16/7; background: var(--pierre); display:grid; place-items:center; color: var(--texte-doux); font-size: var(--t-sm)">Emplacement de la carte</div>
+      </div>
+    </div>
+  </section>
+</main></div>
+<div class="view" data-route="mentions-legales" hidden><main id="contenu-mentions-legales">
+  
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb" aria-label="Fil d'Ariane"><li><a href="#accueil">Accueil</a></li><li aria-current="page">Mentions légales</li></ol>
+    <h1>Mentions légales</h1>
+    
+  </div>
+  <svg class="page-hero__horizon" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 150 C 240 138, 520 132, 760 140 S 1240 168, 1440 150"/>
+  
+</svg>
+</section>
+  <section class="section section--white">
+    <div class="container prose">
+      <p class="muted">Contenu type à faire valider par votre conseil juridique. Les éléments entre crochets sont à compléter.</p>
+      <h2>Éditeur du site</h2>
+      <p>Le site www.tawilacapital.fr est édité par Tawila Capital, [forme juridique] au capital de [montant] euros, immatriculée au Registre du commerce et des sociétés de [ville] sous le numéro [numéro], dont le siège social est situé [adresse]. Numéro de TVA intracommunautaire : [numéro]. Directeur de la publication : [Prénom Nom]. Contact : contact@tawilacapital.fr.</p>
+      <h2>Hébergement</h2>
+      <p>Le site est hébergé par [nom de l'hébergeur], [forme juridique], [adresse], [téléphone].</p>
+      <h2>Propriété intellectuelle</h2>
+      <p>L'ensemble des contenus du site (textes, images, graphismes, logo, structure) est la propriété exclusive de Tawila Capital ou de ses partenaires et est protégé par le droit de la propriété intellectuelle. Les marques citées appartiennent à leurs propriétaires respectifs. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
+      <h2>Responsabilité</h2>
+      <p>Les informations diffusées sur ce site sont fournies à titre indicatif et ne constituent ni un conseil en investissement, ni une offre, ni une sollicitation. Tawila Capital s'efforce d'en assurer l'exactitude mais ne saurait être tenue responsable des erreurs, omissions ou de l'usage qui en serait fait.</p>
+      <h2>Données personnelles</h2>
+      <p>Les modalités de traitement des données personnelles sont décrites dans la <a href="#politique-de-confidentialite">politique de confidentialité</a>.</p>
+    </div>
+  </section>
+</main></div>
+<div class="view" data-route="politique-de-confidentialite" hidden><main id="contenu-politique-de-confidentialite">
+  
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb" aria-label="Fil d'Ariane"><li><a href="#accueil">Accueil</a></li><li aria-current="page">Politique de confidentialité</li></ol>
+    <h1>Politique de confidentialité</h1>
+    
+  </div>
+  <svg class="page-hero__horizon" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 150 C 240 138, 520 132, 760 140 S 1240 168, 1440 150"/>
+  
+</svg>
+</section>
+  <section class="section section--white">
+    <div class="container prose">
+      <p class="muted">Contenu type à faire valider par votre conseil juridique ou votre délégué à la protection des données.</p>
+      <h2>Responsable du traitement</h2>
+      <p>Tawila Capital, [adresse], est responsable du traitement des données personnelles collectées sur ce site. Contact : contact@tawilacapital.fr.</p>
+      <h2>Données collectées</h2>
+      <p>Via le formulaire de contact : prénom, nom, e-mail, téléphone, société, profil et contenu du message. Via la navigation : données techniques et statistiques de fréquentation, sous réserve de votre consentement aux cookies de mesure d'audience.</p>
+      <h2>Finalités et bases légales</h2>
+      <ul>
+        <li>Répondre à vos demandes de contact (consentement et intérêt légitime).</li>
+        <li>Étudier les projets d'investissement ou de franchise qui nous sont soumis (mesures précontractuelles).</li>
+        <li>Mesurer l'audience du site et améliorer son fonctionnement (consentement).</li>
+      </ul>
+      <h2>Durées de conservation</h2>
+      <p>Les données de contact sont conservées trois ans à compter du dernier échange. Les données relatives à un projet sont conservées pendant la durée de l'étude puis archivées conformément aux obligations légales.</p>
+      <h2>Destinataires</h2>
+      <p>Les données sont destinées à l'équipe Tawila Capital et, le cas échéant, à ses prestataires techniques (hébergement, formulaire) agissant sur instruction. Elles ne sont ni vendues ni cédées.</p>
+      <h2>Vos droits</h2>
+      <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité, ainsi que du droit de définir des directives post-mortem. Pour l'exercer : contact@tawilacapital.fr. Vous pouvez introduire une réclamation auprès de la CNIL.</p>
+      <h2>Cookies</h2>
+      <p>Le site utilise des cookies strictement nécessaires à son fonctionnement et, avec votre accord, des cookies de mesure d'audience. Vous pouvez modifier vos choix à tout moment depuis le bandeau de gestion des cookies.</p>
+      <p class="muted">Dernière mise à jour : [date].</p>
+    </div>
+  </section>
+</main></div>
+<div class="view" data-route="404" hidden><main id="contenu-404">
+  <section class="notfound section">
+    <div class="container">
+      <p class="muted">Erreur 404</p>
+      <h1>Cette page n'est pas à la table.</h1>
+      <p class="lead">L'adresse demandée n'existe pas ou a été déplacée.</p>
+      <div class="hero__actions" style="margin-top: var(--s-4)">
+        <a class="btn btn--solid" href="#accueil">Retour à l'accueil <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a>
+        <a class="btn" href="#contact">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+</main></div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="#accueil" aria-label="Tawila Capital, retour à l'accueil">
+          <svg class="brand__mark" viewBox="0 0 100 100" aria-hidden="true">
+        <g class="b"><rect x="2" y="2" width="12" height="12"/><rect x="18" y="2" width="28" height="12"/><rect x="54" y="2" width="28" height="12"/><rect x="86" y="2" width="12" height="12"/><rect x="2" y="18" width="12" height="28"/><rect x="86" y="18" width="12" height="28"/><rect x="2" y="54" width="12" height="28"/><rect x="86" y="54" width="12" height="28"/><rect x="2" y="86" width="12" height="12"/><rect x="18" y="86" width="28" height="12"/><rect x="54" y="86" width="28" height="12"/><rect x="86" y="86" width="12" height="12"/></g>
+        <g class="g"><path d="M46 14v10H22v22H14"/><path d="M54 14v10h24v22h8"/><path d="M46 86V76H22V54H14"/><path d="M54 86V76h24V54h8"/></g>
+      </svg>
+          <span class="brand__name">Tawila Capital</span>
+        </a>
+        <p>Fonds de capital-investissement éthique. Nous finançons et accompagnons, sans dette, des enseignes et des acteurs de l'écosystème halal en France, autour d'une même table.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Le fonds</h4>
+        <ul>
+          <li><a href="#le-fonds">Stratégie d'investissement</a></li>
+          <li><a href="#le-fonds" data-anchor="criteres">Critères d'investissement</a></li>
+          <li><a href="#le-fonds" data-anchor="processus">Processus</a></li>
+          <li><a href="#le-fonds" data-anchor="investisseurs">Investisseurs</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>La société</h4>
+        <ul>
+          <li><a href="#equipe">Équipe et gouvernance</a></li>
+          <li><a href="#equipe" data-anchor="principes">Nos principes</a></li>
+          <li><a href="#participations">Participations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@tawilacapital.fr">contact@tawilacapital.fr</a></li>
+          <li><a href="tel:+33100000000">+33 1 00 00 00 00</a></li>
+          <li>Adresse à compléter<br>Paris, France</li>
+          <li><a href="https://www.linkedin.com/company/tawila-capital" rel="noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disclaimer">Les informations présentées sur ce site ne constituent ni une offre, ni une sollicitation d'investissement. Les performances passées ne préjugent pas des performances futures. Les informations relatives aux véhicules d'investissement sont réservées aux investisseurs avertis et communiquées sur demande.</p>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> Tawila Capital. Tous droits réservés.</span>
+      <span><a href="#mentions-legales">Mentions légales</a> &nbsp;·&nbsp; <a href="#politique-de-confidentialite">Politique de confidentialité</a></span>
+    </div>
+  </div>
+</footer>
+<div class="preview-banner">Aperçu de démonstration du site Tawila Capital. Navigation par ancres, formulaire non connecté. Version WordPress + Elementor à venir.</div>
+<script>
+/* =========================================================
+   TAWILA — Script principal
+   - En-tête au défilement
+   - Menu mobile
+   - Séquence d'ouverture du héros
+   - Révélations au défilement (IntersectionObserver)
+   - Compteurs des chiffres clés
+   - Accordéon (FAQ)
+   - Filtres du portefeuille
+   - Validation du formulaire (aperçu HTML ; WPForms prend le relais sous WordPress)
+   Tout est exposé via window.TAWILA.init(root) pour pouvoir
+   être ré-initialisé (aperçu monopage, Elementor, etc.).
+   ========================================================= */
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- En-tête ---------- */
+  function initHeader(root) {
+    var header = root.querySelector('.site-header');
+    if (!header) return;
+    var toggle = header.querySelector('.nav-toggle');
+    var nav = header.querySelector('.nav');
+
+    function onScroll() {
+      header.classList.toggle('is-scrolled', window.scrollY > 24);
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+        nav.classList.toggle('is-open', open);
+        header.classList.toggle('is-open', open);
+        document.body.classList.toggle('nav-locked', open);
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (nav.classList.contains('is-open')) toggle.click();
+        });
+      });
+    }
+  }
+
+  /* ---------- Héros ---------- */
+  function initHero(root) {
+    root.querySelectorAll('.hero, .page-hero').forEach(function (hero) {
+      // Laisse un instant au navigateur pour peindre l'état initial, puis lance la séquence.
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { hero.classList.add('is-ready'); });
+      });
+    });
+  }
+
+  /* ---------- Révélations ---------- */
+  function initReveal(root) {
+    var items = root.querySelectorAll('.reveal, .horizon');
+    if (!items.length) return;
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+    items.forEach(function (el) {
+      // Élément déjà au-dessus de la zone visible (arrivée par ancre) : affiché sans attendre.
+      if (el.getBoundingClientRect().bottom < 0) { el.classList.add('is-visible'); return; }
+      io.observe(el);
+    });
+  }
+
+  /* ---------- Compteurs ---------- */
+  function formatNumber(n, decimals) {
+    return n.toLocaleString('fr-FR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  }
+  function initCounters(root) {
+    var counters = root.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+    function run(el) {
+      var target = parseFloat(el.getAttribute('data-count'));
+      var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      if (isNaN(target)) return;
+      if (reduceMotion) { el.textContent = formatNumber(target, decimals); return; }
+      var start = null, duration = 1600;
+      function frame(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = formatNumber(target * eased, decimals);
+        if (p < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+    if (!('IntersectionObserver' in window)) { counters.forEach(run); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { run(entry.target); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- Accordéon ---------- */
+  function initAccordion(root) {
+    root.querySelectorAll('.accordion').forEach(function (acc) {
+      var triggers = acc.querySelectorAll('.accordion__trigger');
+      triggers.forEach(function (btn) {
+        var panel = document.getElementById(btn.getAttribute('aria-controls'));
+        if (!panel) return;
+        btn.addEventListener('click', function () {
+          var open = btn.getAttribute('aria-expanded') === 'true';
+          // Ferme les autres
+          triggers.forEach(function (other) {
+            if (other !== btn && other.getAttribute('aria-expanded') === 'true') {
+              other.setAttribute('aria-expanded', 'false');
+              var p = document.getElementById(other.getAttribute('aria-controls'));
+              if (p) { p.style.height = p.scrollHeight + 'px'; requestAnimationFrame(function () { p.style.height = '0px'; }); }
+            }
+          });
+          btn.setAttribute('aria-expanded', String(!open));
+          if (open) {
+            panel.style.height = panel.scrollHeight + 'px';
+            requestAnimationFrame(function () { panel.style.height = '0px'; });
+          } else {
+            panel.style.height = panel.scrollHeight + 'px';
+            panel.addEventListener('transitionend', function done() {
+              if (btn.getAttribute('aria-expanded') === 'true') panel.style.height = 'auto';
+              panel.removeEventListener('transitionend', done);
+            });
+          }
+        });
+      });
+    });
+  }
+
+  /* ---------- Filtres portefeuille ---------- */
+  function initFilters(root) {
+    var bar = root.querySelector('.filters');
+    if (!bar) return;
+    var items = root.querySelectorAll('.holding');
+    bar.querySelectorAll('button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        bar.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        var f = btn.getAttribute('data-filter');
+        items.forEach(function (it) {
+          var match = f === 'all' || (it.getAttribute('data-tags') || '').split(' ').indexOf(f) !== -1;
+          it.classList.toggle('is-hidden', !match);
+        });
+      });
+    });
+  }
+
+  /* ---------- Formulaire (aperçu) ---------- */
+  function initForm(root) {
+    var form = root.querySelector('form.form');
+    if (!form) return;
+    var status = form.querySelector('.form__status');
+    function validate(field) {
+      var input = field.querySelector('input, textarea, select');
+      if (!input) return true;
+      var ok = input.checkValidity();
+      field.classList.toggle('is-invalid', !ok);
+      return ok;
+    }
+    form.querySelectorAll('.field').forEach(function (field) {
+      var input = field.querySelector('input, textarea, select');
+      if (input) input.addEventListener('blur', function () { validate(field); });
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var allOk = true;
+      form.querySelectorAll('.field').forEach(function (field) { if (!validate(field)) allOk = false; });
+      var consent = form.querySelector('input[name="consentement"]');
+      if (consent && !consent.checked) { allOk = false; consent.focus(); }
+      if (!allOk) {
+        if (status) { status.textContent = 'Merci de vérifier les champs signalés.'; status.classList.add('is-error'); }
+        return;
+      }
+      if (status) {
+        status.classList.remove('is-error');
+        status.textContent = 'Message envoyé. Nous revenons vers vous sous 48 heures ouvrées.';
+      }
+      form.reset();
+    });
+  }
+
+  /* ---------- Année du pied de page ---------- */
+  function initYear(root) {
+    root.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = String(new Date().getFullYear()); });
+  }
+
+  function init(root) {
+    root = root || document;
+    initHeader(root);
+    initHero(root);
+    initReveal(root);
+    initCounters(root);
+    initAccordion(root);
+    initFilters(root);
+    initForm(root);
+    initYear(root);
+  }
+
+  window.TAWILA = { init: init, initReveal: initReveal, initCounters: initCounters, initHero: initHero, initAccordion: initAccordion, initFilters: initFilters, initForm: initForm };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { init(document); });
+  } else {
+    init(document);
+  }
+})();
+
+</script>
+<script>
+
+(function(){
+  var META = {"404":{"title":"Page introuvable | Tawila Capital","dark":false},"accueil":{"title":"Tawila Capital | Fonds d'investissement éthique et sans dette","dark":false},"le-fonds":{"title":"Le fonds et la stratégie d'investissement | Tawila Capital","dark":true},"equipe":{"title":"Équipe et gouvernance | Tawila Capital","dark":false},"participations":{"title":"Nos participations et enseignes | Tawila Capital","dark":true},"contact":{"title":"Contacter Tawila Capital | Entrepreneurs, franchisés, investisseurs","dark":false},"mentions-legales":{"title":"Mentions légales | Tawila Capital","dark":false},"politique-de-confidentialite":{"title":"Politique de confidentialité | Tawila Capital","dark":false}};
+  var header = document.querySelector('.site-header');
+  var nav = header.querySelector('.nav');
+  var routeLabels = { 'accueil': 'index.html', 'le-fonds': 'le-fonds.html', 'equipe': 'equipe.html', 'participations': 'participations.html', 'contact': 'contact.html' };
+  function show(route, anchor) {
+    if (!META[route]) route = 'accueil';
+    document.querySelectorAll('.view').forEach(function(v){ v.hidden = v.getAttribute('data-route') !== route; });
+    document.title = META[route].title;
+    header.classList.toggle('site-header--dark', !!META[route].dark);
+    nav.querySelectorAll('a').forEach(function(a){
+      var target = (a.getAttribute('href') || '').replace('#','');
+      if (target === route) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    var view = document.querySelector('.view[data-route="' + route + '"]');
+    // Réinitialise les animations de la vue affichée
+    view.querySelectorAll('.is-ready, .is-visible').forEach(function(el){ el.classList.remove('is-ready'); el.classList.remove('is-visible'); });
+    view.querySelectorAll('[data-count]').forEach(function(el){ el.textContent = '0'; });
+    window.TAWILA.initHero(view); window.TAWILA.initReveal(view); window.TAWILA.initCounters(view);
+    if (anchor) { var el = view.querySelector('#' + anchor); if (el) { setTimeout(function(){ el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50); return; } }
+    window.scrollTo(0, 0);
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var route = a.getAttribute('href').slice(1);
+    if (META[route]) {
+      e.preventDefault();
+      var anchor = a.getAttribute('data-anchor');
+      if (location.hash !== '#' + route) { history.pushState(null, '', '#' + route); }
+      show(route, anchor);
+    }
+  });
+  window.addEventListener('popstate', function(){ show(location.hash.slice(1) || 'accueil'); });
+  window.addEventListener('hashchange', function(){ show(location.hash.slice(1) || 'accueil'); });
+  // Initialisation
+  var initial = location.hash.slice(1) || 'accueil';
+  document.querySelectorAll('.view').forEach(function(v){ v.hidden = true; });
+  window.TAWILA.init(document);
+  show(initial);
+})();
+
+</script>
+</body>
+</html>

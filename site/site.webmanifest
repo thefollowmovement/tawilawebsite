@@ -1,0 +1,22 @@
+{
+  "name": "Tawila Capital",
+  "short_name": "Tawila",
+  "description": "Fonds de capital-investissement éthique",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4f5f1",
+  "theme_color": "#0f4a35",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
