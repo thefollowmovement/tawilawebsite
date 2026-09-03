@@ -6,18 +6,24 @@ un éditeur de texte suffit.
 
 ## Couleurs et polices
 
-En tête de `site/assets/css/style.css`, le bloc `:root` contient toutes les variables :
+En tête de `site/assets/css/style.css`, deux jeux de variables :
 
-| Variable | Rôle | Valeur actuelle |
-| --- | --- | --- |
-| `--nuit` | fond principal | `#07130f` |
-| `--foret` | sections alternées, panneaux | `#0c241c` |
-| `--or` | accent principal, traits | `#c9a961` |
-| `--ivoire` | texte principal | `#eceee8` |
-| `--font-display` | police des titres | Sora |
-| `--font-body` | police du texte | Manrope |
+- le bloc `:root` définit le jeu clair, utilisé par défaut sur tout le site ;
+- le bloc `.site-header, .hero, .page-hero, .site-footer` redéfinit les mêmes variables
+  en sombre pour la barre de navigation, le héros, les bandeaux de page et le pied de page.
 
-Changer une valeur ici met à jour le site entier.
+| Variable | Rôle | Clair | Sombre |
+| --- | --- | --- | --- |
+| `--bg` | fond principal | `#f7f7f3` | `#07130f` |
+| `--bg-alt` | sections alternées, panneaux | `#eef0e9` | `#0c241c` |
+| `--accent` | or (libellés, traits) | `#9c7a33` | `#c9a961` |
+| `--accent-light` | chiffres, liens | `#7e6128` | `#e9d9ad` |
+| `--text` | texte principal | `#0b2e22` | `#eceee8` |
+| `--text-muted` | texte secondaire | `#4f5f57` | `#9fb0a6` |
+| `--font-display` | police des titres | Sora | |
+| `--font-body` | police du texte | Manrope | |
+
+Pour passer une section en sombre, ajoutez-lui la classe `theme-dark`.
 
 ## Textes
 

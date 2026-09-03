@@ -19,11 +19,11 @@ reconstruire sous WordPress avec Elementor, en gardant tout modifiable.
 
 | Section HTML | Widget Elementor |
 | --- | --- |
-| En-tête `.site-header` | Theme Builder > Header : logo (Site Logo), menu (Nav Menu), bouton |
+| En-tête `.site-header` | Theme Builder > Header, fond `#07130f` à 92 % avec flou, fixe : logo (Site Logo), menu (Nav Menu), bouton |
 | Héros `.hero` | Section pleine hauteur, Heading avec animation « Fade In Up » par ligne, SVG de la ligne d'horizon en widget HTML |
 | Chiffres `.stats` | Widget Counter (Elementor Pro) avec suffixe |
 | Piliers `.pillars` | Icon Box x 3, séparateur en haut (Border Top) |
-| Bande verte `.section--dark` | Section avec fond `#0c241c`, Heading (police Sora) |
+| Bande citation `.section--dark` | Section avec fond `#eef0e9`, Heading (police Sora) |
 | Secteurs `.sectors` | Icon List ou colonnes Heading + Text |
 | Participations `.portfolio` | Posts (Elementor Pro) sur un type de contenu personnalisé « Participations » avec taxonomie « Secteur », ou Loop Grid avec filtres (Taxonomy Filter) |
 | Étapes `.steps` | Widget Numbered List ou Flip Box, ou colonnes avec Heading numérotées |
@@ -31,12 +31,12 @@ reconstruire sous WordPress avec Elementor, en gardant tout modifiable.
 | Principes `.principles` | Colonnes Heading + Text avec séparateurs |
 | Équipe `.team` | Widget Image Box, ou type de contenu « Équipe » affiché en Loop Grid |
 | Accordéon FAQ | Widget Accordion (ajouter le schéma FAQ dans Rank Math) |
-| Appel à l'action `.cta` | Section dégradée `#0c241c` vers `#07130f` avec Heading + 2 Buttons |
+| Appel à l'action `.cta` | Section fond `#eef0e9` avec Heading + 2 Buttons |
 | Pied de page | Theme Builder > Footer |
 
 ## Réglages globaux Elementor (Site Settings)
 
-- Couleurs globales : Primaire `#c9a961` (or), Secondaire `#0c241c`, Accent `#e9d9ad`, Texte `#eceee8`, Fond `#07130f`.
+- Couleurs globales : Primaire `#0b2e22` (vert nuit), Secondaire `#07130f` (barre de navigation, héros, pied de page), Accent `#9c7a33` (or sur fond clair) et `#c9a961` (or sur fond sombre), Texte `#0b2e22`, Fond `#f7f7f3`, Fond alterné `#eef0e9`.
 - Polices globales : Titres Sora 400, Texte Manrope 400/600.
 - Largeur du contenu : 1180 px. Espacement des sections : 90 à 130 px.
 - Boutons : rayon 2 px, bordure 1 px, majuscules désactivées.
