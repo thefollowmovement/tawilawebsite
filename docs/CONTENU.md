@@ -14,7 +14,7 @@ En tête de `site/assets/css/style.css`, le bloc `:root` contient toutes les var
 | `--foret` | sections alternées, panneaux | `#0c241c` |
 | `--or` | accent principal, traits | `#c9a961` |
 | `--ivoire` | texte principal | `#eceee8` |
-| `--font-display` | police des titres | Cormorant Garamond |
+| `--font-display` | police des titres | Sora |
 | `--font-body` | police du texte | Manrope |
 
 Changer une valeur ici met à jour le site entier.

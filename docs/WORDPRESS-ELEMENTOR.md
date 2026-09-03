@@ -23,7 +23,7 @@ reconstruire sous WordPress avec Elementor, en gardant tout modifiable.
 | Héros `.hero` | Section pleine hauteur, Heading avec animation « Fade In Up » par ligne, SVG de la ligne d'horizon en widget HTML |
 | Chiffres `.stats` | Widget Counter (Elementor Pro) avec suffixe |
 | Piliers `.pillars` | Icon Box x 3, séparateur en haut (Border Top) |
-| Bande verte `.section--dark` | Section avec fond `#0c241c`, Heading (police Cormorant Garamond) |
+| Bande verte `.section--dark` | Section avec fond `#0c241c`, Heading (police Sora) |
 | Secteurs `.sectors` | Icon List ou colonnes Heading + Text |
 | Participations `.portfolio` | Posts (Elementor Pro) sur un type de contenu personnalisé « Participations » avec taxonomie « Secteur », ou Loop Grid avec filtres (Taxonomy Filter) |
 | Étapes `.steps` | Widget Numbered List ou Flip Box, ou colonnes avec Heading numérotées |
@@ -37,7 +37,7 @@ reconstruire sous WordPress avec Elementor, en gardant tout modifiable.
 ## Réglages globaux Elementor (Site Settings)
 
 - Couleurs globales : Primaire `#c9a961` (or), Secondaire `#0c241c`, Accent `#e9d9ad`, Texte `#eceee8`, Fond `#07130f`.
-- Polices globales : Titres Cormorant Garamond 400, Texte Manrope 400/600.
+- Polices globales : Titres Sora 400, Texte Manrope 400/600.
 - Largeur du contenu : 1180 px. Espacement des sections : 90 à 130 px.
 - Boutons : rayon 2 px, bordure 1 px, majuscules désactivées.
 

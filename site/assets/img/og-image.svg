@@ -11,7 +11,7 @@
       <path d="M46 14v10H22v22H14"/><path d="M54 14v10h24v22h8"/><path d="M46 86V76H22V54H14"/><path d="M54 86V76h24V54h8"/>
     </g>
   </g>
-  <text x="80" y="250" font-family="Cormorant Garamond, Georgia, serif" font-size="92" fill="#ffffff">Tawila Capital</text>
+  <text x="80" y="250" font-family="Sora, Manrope, Helvetica, Arial, sans-serif" font-size="72" font-weight="300" letter-spacing="-2" fill="#ffffff">Tawila Capital</text>
   <text x="80" y="320" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="30" fill="#9fb0a6">Capital-investissement éthique, sans dette, au service des entreprises halal</text>
   <path d="M80 400h640" stroke="#c4a24e" stroke-width="2"/>
   <text x="80" y="560" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="22" fill="#6f7f77">www.tawilacapital.fr</text>
