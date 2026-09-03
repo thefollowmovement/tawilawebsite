@@ -54,12 +54,13 @@ Changez la valeur de `data-count`. Pour un nombre décimal, ajoutez `data-decima
 Dans `equipe.html`, chaque personne est un bloc `<article class="member">`. Les photos
 sont dans `site/assets/img/equipe/` au format 800 x 1000 pixels, JPEG.
 
-Sont en place, issus de la présentation du groupe : les six fondateurs (Wail Mokhbat,
-Hafi Nizar, Yannis Ourabia, Mehdi Bella, Mohamed Bella, Ryad Yahia-Cherif), les trois
-sociétés fondatrices (DPS Market, Big M, Hoxon), la direction opérationnelle et la frise
-historique. Trois portraits manquent (Yannis Ourabia, Mehdi Bella, Ryad Yahia-Cherif) :
-déposez le fichier dans le dossier et remplacez le bloc `member__photo` par une balise
-`<img>` comme pour les autres. Vérifiez que chaque personne accepte d'apparaître.
+Sont en place, issus du slide Leadership de la présentation du groupe : les six fondateurs
+(Hafi Nizar, Wail Mokhbat, Mohamed Bella, Yannis Ourabia, Mehdi Bella, Ryad Yahia-Cherif),
+les deux sociétés fondatrices (DPS Market, Big M), la direction opérationnelle et la frise
+historique. Deux portraits manquent (Yannis Ourabia, Mehdi Bella) et celui de Ryad
+Yahia-Cherif est en basse définition (100 pixels dans la présentation) : déposez un fichier
+haute définition dans le dossier sous le même nom. Vérifiez que chaque personne accepte
+d'apparaître.
 
 ## Participations
 

@@ -472,3 +472,5 @@ em, .italic { font-style: italic; }
 .logos img { height: 40px; width: auto; opacity: 0.85; transition: opacity 300ms; }
 .logos img:hover { opacity: 1; }
 .member__photo img { width: 100%; height: 100%; object-fit: cover; }
+.poles--2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) { .poles--2 { grid-template-columns: 1fr; } }
