@@ -58,9 +58,20 @@ for (const [file, route] of PAGES) {
   views += `<div class="view" data-route="${route}" hidden>${scoped}</div>\n`;
 }
 
+// Images locales -> data URI (l'aperçu est un fichier unique, sans dossier assets)
+function inlineImages(html) {
+  return html.replace(/src="assets\/img\/([^"]+)"/g, (m, rel) => {
+    const file = path.join(SITE, 'assets/img', rel);
+    if (!fs.existsSync(file)) return m;
+    const ext = path.extname(file).slice(1).toLowerCase();
+    const mime = ext === 'jpg' ? 'image/jpeg' : ext === 'svg' ? 'image/svg+xml' : 'image/' + ext;
+    return `src="data:${mime};base64,${fs.readFileSync(file).toString('base64')}"`;
+  });
+}
+
 const header = rewriteLinks(headerMatch[0]);
 const footer = rewriteLinks(footerMatch[0]);
-views = rewriteLinks(views);
+views = inlineImages(rewriteLinks(views));
 
 const routerJs = `
 (function(){

@@ -51,25 +51,22 @@ Changez la valeur de `data-count`. Pour un nombre décimal, ajoutez `data-decima
 
 ## Équipe
 
-Dans `equipe.html`, chaque personne est un bloc `<article class="member">`.
-Pour ajouter une photo, remplacez le `<div class="member__photo">` par :
+Dans `equipe.html`, chaque personne est un bloc `<article class="member">`. Les photos
+sont dans `site/assets/img/equipe/` au format 800 x 1000 pixels, JPEG.
 
-```html
-<img class="member__photo" src="assets/img/equipe/prenom-nom.jpg" alt="Portrait de Prénom Nom" width="800" height="1000" loading="lazy">
-```
-
-Format recommandé : 800 x 1000 pixels, JPEG.
-
-Les personnes affichées viennent de la présentation fournie : les trois
-actionnaires fondateurs (DPS Market, Big M, Ryad Yahia Cherif) et cinq personnes
-clés. Vérifiez que chaque personne accepte d'apparaître sur le site.
+Sont en place, issus de la présentation du groupe : les six fondateurs (Wail Mokhbat,
+Hafi Nizar, Yannis Ourabia, Mehdi Bella, Mohamed Bella, Ryad Yahia-Cherif), les trois
+sociétés fondatrices (DPS Market, Big M, Hoxon), la direction opérationnelle et la frise
+historique. Trois portraits manquent (Yannis Ourabia, Mehdi Bella, Ryad Yahia-Cherif) :
+déposez le fichier dans le dossier et remplacez le bloc `member__photo` par une balise
+`<img>` comme pour les autres. Vérifiez que chaque personne accepte d'apparaître.
 
 ## Participations
 
 Dans `participations.html`, chaque enseigne est un bloc `<article class="holding">`.
-L'attribut `data-tags` pilote les filtres (`restauration`, `foodcourt`, `services`,
-`ecosysteme`). Pour un logo, remplacez le texte de `<div class="holding__logo">` par
-une image de 44 pixels de haut.
+L'attribut `data-tags` pilote les filtres (`distribution`, `restauration`, `finance`,
+`produits`, `preparation`). Les logos sont dans `site/assets/img/marques/` (44 pixels de
+haut à l'affichage). Les cartes sans logo affichent le nom en texte.
 
 ## Formulaire de contact
 
