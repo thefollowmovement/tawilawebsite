@@ -10,11 +10,11 @@ En tête de `site/assets/css/style.css`, le bloc `:root` contient toutes les var
 
 | Variable | Rôle | Valeur actuelle |
 | --- | --- | --- |
-| `--encre` | vert profond, fonds sombres, titres | `#0b2e22` |
-| `--abysse` | vert Tawila (logo), bandes vertes | `#0f4a35` |
-| `--laiton` | or Tawila (logo), accents, traits | `#c4a24e` |
-| `--brume` | fond clair principal | `#f4f5f1` |
-| `--font-display` | police des titres | Instrument Serif |
+| `--nuit` | fond principal | `#07130f` |
+| `--foret` | sections alternées, panneaux | `#0c241c` |
+| `--or` | accent principal, traits | `#c9a961` |
+| `--ivoire` | texte principal | `#eceee8` |
+| `--font-display` | police des titres | Cormorant Garamond |
 | `--font-body` | police du texte | Manrope |
 
 Changer une valeur ici met à jour le site entier.

@@ -116,11 +116,11 @@ const out = `<!DOCTYPE html>
   <link rel="icon" href="${svgToDataUri('favicon.svg')}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@400;500;600;700&display=swap">
   <style>
 ${css}
-  .preview-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; background: #0b2e22; color: #e8ece8; font: 600 12px/1.4 Manrope, sans-serif; padding: 8px 16px; text-align: center; opacity: .92; }
-  .preview-banner a { color: #c4a24e; }
+  .preview-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 200; background: #07130f; color: #eceee8; font: 600 12px/1.4 Manrope, sans-serif; padding: 8px 16px; text-align: center; opacity: .92; }
+  .preview-banner a { color: #c9a961; }
   .view[hidden] { display: none !important; }
   </style>
 </head>

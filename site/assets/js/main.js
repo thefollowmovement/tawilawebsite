@@ -56,6 +56,49 @@
     });
   }
 
+
+  /* ---------- Projecteur du héros (suit le curseur, révèle la seconde couche) ---------- */
+  function initSpotlight(root) {
+    var hero = root.querySelector('.hero');
+    var layer = hero && hero.querySelector('.hero__layer--reveal');
+    if (!hero || !layer) return;
+    var rect = hero.getBoundingClientRect();
+    var target = { x: rect.width * 0.7, y: rect.height * 0.4 };
+    var pos = { x: target.x, y: target.y };
+    var active = false, t0 = performance.now(), raf;
+    if (reduceMotion) { layer.style.setProperty('--mx', '70%'); layer.style.setProperty('--my', '40%'); return; }
+    function frame(now) {
+      rect = hero.getBoundingClientRect();
+      if (!active) {
+        // Dérive lente et naturelle quand le curseur n'est pas sur le héros (mobile compris).
+        var t = (now - t0) / 1000;
+        target.x = rect.width * (0.62 + 0.18 * Math.cos(t * 0.35));
+        target.y = rect.height * (0.42 + 0.14 * Math.sin(t * 0.27));
+      }
+      pos.x += (target.x - pos.x) * 0.08;
+      pos.y += (target.y - pos.y) * 0.08;
+      layer.style.setProperty('--mx', pos.x.toFixed(1) + 'px');
+      layer.style.setProperty('--my', pos.y.toFixed(1) + 'px');
+      raf = requestAnimationFrame(frame);
+    }
+    hero.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var r = hero.getBoundingClientRect();
+      active = true; target.x = e.clientX - r.left; target.y = e.clientY - r.top;
+    });
+    hero.addEventListener('pointerleave', function () { active = false; t0 = performance.now() - 1000; });
+    raf = requestAnimationFrame(frame);
+    // Coupe la boucle quand le héros est hors écran.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { if (!raf) raf = requestAnimationFrame(frame); }
+          else { cancelAnimationFrame(raf); raf = null; }
+        });
+      }).observe(hero);
+    }
+  }
+
   /* ---------- Révélations ---------- */
   function initReveal(root) {
     var items = root.querySelectorAll('.reveal, .horizon');
@@ -204,6 +247,7 @@
     root = root || document;
     initHeader(root);
     initHero(root);
+    initSpotlight(root);
     initReveal(root);
     initCounters(root);
     initAccordion(root);
@@ -212,7 +256,7 @@
     initYear(root);
   }
 
-  window.TAWILA = { init: init, initReveal: initReveal, initCounters: initCounters, initHero: initHero, initAccordion: initAccordion, initFilters: initFilters, initForm: initForm };
+  window.TAWILA = { init: init, initReveal: initReveal, initCounters: initCounters, initHero: initHero, initSpotlight: initSpotlight, initAccordion: initAccordion, initFilters: initFilters, initForm: initForm };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () { init(document); });

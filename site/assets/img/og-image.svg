@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#0b2e22"/>
+  <rect width="1200" height="630" fill="#07130f"/>
   <g transform="translate(860 165) scale(3)">
     <g fill="#0f4a35" stroke="#c4a24e" stroke-width="1.2">
       <rect x="2" y="2" width="12" height="12"/><rect x="18" y="2" width="28" height="12"/><rect x="54" y="2" width="28" height="12"/><rect x="86" y="2" width="12" height="12"/>
@@ -11,8 +11,8 @@
       <path d="M46 14v10H22v22H14"/><path d="M54 14v10h24v22h8"/><path d="M46 86V76H22V54H14"/><path d="M54 86V76h24V54h8"/>
     </g>
   </g>
-  <text x="80" y="250" font-family="Instrument Serif, Georgia, serif" font-size="92" fill="#ffffff">Tawila Capital</text>
-  <text x="80" y="320" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="30" fill="#c8d2cc">Capital-investissement éthique, sans dette, au service des entreprises halal</text>
+  <text x="80" y="250" font-family="Cormorant Garamond, Georgia, serif" font-size="92" fill="#ffffff">Tawila Capital</text>
+  <text x="80" y="320" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="30" fill="#9fb0a6">Capital-investissement éthique, sans dette, au service des entreprises halal</text>
   <path d="M80 400h640" stroke="#c4a24e" stroke-width="2"/>
-  <text x="80" y="560" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="22" fill="#8fa198">www.tawilacapital.fr</text>
+  <text x="80" y="560" font-family="Manrope, Helvetica, Arial, sans-serif" font-size="22" fill="#6f7f77">www.tawilacapital.fr</text>
 </svg>

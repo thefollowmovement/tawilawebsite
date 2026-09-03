@@ -23,7 +23,7 @@ reconstruire sous WordPress avec Elementor, en gardant tout modifiable.
 | Héros `.hero` | Section pleine hauteur, Heading avec animation « Fade In Up » par ligne, SVG de la ligne d'horizon en widget HTML |
 | Chiffres `.stats` | Widget Counter (Elementor Pro) avec suffixe |
 | Piliers `.pillars` | Icon Box x 3, séparateur en haut (Border Top) |
-| Bande verte `.section--dark` | Section avec fond `#0b2e22`, Heading (police Instrument Serif) |
+| Bande verte `.section--dark` | Section avec fond `#0c241c`, Heading (police Cormorant Garamond) |
 | Secteurs `.sectors` | Icon List ou colonnes Heading + Text |
 | Participations `.portfolio` | Posts (Elementor Pro) sur un type de contenu personnalisé « Participations » avec taxonomie « Secteur », ou Loop Grid avec filtres (Taxonomy Filter) |
 | Étapes `.steps` | Widget Numbered List ou Flip Box, ou colonnes avec Heading numérotées |
@@ -31,13 +31,13 @@ reconstruire sous WordPress avec Elementor, en gardant tout modifiable.
 | Principes `.principles` | Colonnes Heading + Text avec séparateurs |
 | Équipe `.team` | Widget Image Box, ou type de contenu « Équipe » affiché en Loop Grid |
 | Accordéon FAQ | Widget Accordion (ajouter le schéma FAQ dans Rank Math) |
-| Appel à l'action `.cta` | Section verte `#0f4a35` avec Heading + 2 Buttons |
+| Appel à l'action `.cta` | Section dégradée `#0c241c` vers `#07130f` avec Heading + 2 Buttons |
 | Pied de page | Theme Builder > Footer |
 
 ## Réglages globaux Elementor (Site Settings)
 
-- Couleurs globales : Primaire `#0f4a35`, Secondaire `#0b2e22`, Accent `#c4a24e`, Texte `#1f2f28`, Fond `#f4f5f1`.
-- Polices globales : Titres Instrument Serif 400, Texte Manrope 400/600.
+- Couleurs globales : Primaire `#c9a961` (or), Secondaire `#0c241c`, Accent `#e9d9ad`, Texte `#eceee8`, Fond `#07130f`.
+- Polices globales : Titres Cormorant Garamond 400, Texte Manrope 400/600.
 - Largeur du contenu : 1180 px. Espacement des sections : 90 à 130 px.
 - Boutons : rayon 2 px, bordure 1 px, majuscules désactivées.
 
@@ -83,3 +83,12 @@ avec le widget WPForms d'Elementor ou le shortcode `[wpforms id="ID" title="fals
 5. Reconstruire chaque page section par section en suivant la maquette HTML (ou importer via l'addon HTML to Elementor puis nettoyer).
 6. Créer le formulaire WPForms et la page Contact.
 7. Reporter le SEO, tester les données structurées, soumettre le sitemap.
+
+## Projecteur du héros (signature du site)
+
+Le héros de l'accueil superpose deux couches : un motif discret (base) et le même
+motif en or (révélation), découpé par un masque circulaire doux qui suit le curseur
+(`mask-image: radial-gradient(...)` piloté par les variables `--mx` et `--my`).
+Sur mobile, le projecteur dérive lentement de lui-même. Sous Elementor, deux options :
+un widget HTML reprenant le bloc `.hero` et le script `initSpotlight` de `main.js`, ou
+un addon d'effet « spotlight / image reveal » (Premium Addons, Element Pack).
