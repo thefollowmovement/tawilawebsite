@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" role="img" aria-label="Tawila Capital">
+  <g transform="translate(0 0) scale(1)">
+    <g fill="#0f4a35" stroke="#c4a24e" stroke-width="1.2">
+      <rect x="2" y="2" width="12" height="12"/><rect x="18" y="2" width="28" height="12"/><rect x="54" y="2" width="28" height="12"/><rect x="86" y="2" width="12" height="12"/>
+      <rect x="2" y="18" width="12" height="28"/><rect x="86" y="18" width="12" height="28"/>
+      <rect x="2" y="54" width="12" height="28"/><rect x="86" y="54" width="12" height="28"/>
+      <rect x="2" y="86" width="12" height="12"/><rect x="18" y="86" width="28" height="12"/><rect x="54" y="86" width="28" height="12"/><rect x="86" y="86" width="12" height="12"/>
+    </g>
+    <g fill="none" stroke="#c4a24e" stroke-width="2.2">
+      <path d="M46 14v10H22v22H14"/><path d="M54 14v10h24v22h8"/><path d="M46 86V76H22V54H14"/><path d="M54 86V76h24V54h8"/>
+    </g>
+  </g>
+  <text x="122" y="66" font-family="Sora, Manrope, Helvetica, Arial, sans-serif" font-size="46" fill="#0f4a35">Tawila Capital</text>
+</svg>
